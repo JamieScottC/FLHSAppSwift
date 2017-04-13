@@ -15,6 +15,10 @@
 		059AB43E1E22CEE3008CE585 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 059AB43C1E22CEE3008CE585 /* LaunchScreen.storyboard */; };
 		059AB4491E22CEE3008CE585 /* FLHS_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AB4481E22CEE3008CE585 /* FLHS_AppTests.swift */; };
 		059AB4541E22CEE3008CE585 /* FLHS_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AB4531E22CEE3008CE585 /* FLHS_AppUITests.swift */; };
+		05EF13AB1E9EC8AF0076F9CD /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EF13AA1E9EC8AF0076F9CD /* CalendarViewController.swift */; };
+		05EF13AD1E9ED7880076F9CD /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EF13AC1E9ED7880076F9CD /* ScheduleTableViewCell.swift */; };
+		05EF13AF1E9EDC4E0076F9CD /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EF13AE1E9EDC4E0076F9CD /* ScheduleTableViewController.swift */; };
+		05EF13B11E9EDF1D0076F9CD /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EF13B01E9EDF1D0076F9CD /* Course.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		059AB44F1E22CEE3008CE585 /* FLHS_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FLHS_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		059AB4531E22CEE3008CE585 /* FLHS_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLHS_AppUITests.swift; sourceTree = "<group>"; };
 		059AB4551E22CEE3008CE585 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05EF13AA1E9EC8AF0076F9CD /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		05EF13AC1E9ED7880076F9CD /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		05EF13AE1E9EDC4E0076F9CD /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
+		05EF13B01E9EDF1D0076F9CD /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,10 @@
 				059AB43C1E22CEE3008CE585 /* LaunchScreen.storyboard */,
 				059AB43F1E22CEE3008CE585 /* Info.plist */,
 				059AB4371E22CEE3008CE585 /* FLHS_App.xcdatamodeld */,
+				05EF13AA1E9EC8AF0076F9CD /* CalendarViewController.swift */,
+				05EF13AC1E9ED7880076F9CD /* ScheduleTableViewCell.swift */,
+				05EF13AE1E9EDC4E0076F9CD /* ScheduleTableViewController.swift */,
+				05EF13B01E9EDF1D0076F9CD /* Course.swift */,
 			);
 			path = FLHS_App;
 			sourceTree = "<group>";
@@ -262,6 +274,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05EF13AF1E9EDC4E0076F9CD /* ScheduleTableViewController.swift in Sources */,
+				05EF13B11E9EDF1D0076F9CD /* Course.swift in Sources */,
+				05EF13AB1E9EC8AF0076F9CD /* CalendarViewController.swift in Sources */,
+				05EF13AD1E9ED7880076F9CD /* ScheduleTableViewCell.swift in Sources */,
 				059AB4331E22CEE3008CE585 /* ViewController.swift in Sources */,
 				059AB4391E22CEE3008CE585 /* FLHS_App.xcdatamodeld in Sources */,
 				059AB4311E22CEE3008CE585 /* AppDelegate.swift in Sources */,
@@ -507,6 +523,7 @@
 				059AB45A1E22CEE3008CE585 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		059AB45B1E22CEE3008CE585 /* Build configuration list for PBXNativeTarget "FLHS_AppTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +532,7 @@
 				059AB45D1E22CEE3008CE585 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		059AB45E1E22CEE3008CE585 /* Build configuration list for PBXNativeTarget "FLHS_AppUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +541,7 @@
 				059AB4601E22CEE3008CE585 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
