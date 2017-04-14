@@ -11,17 +11,24 @@ import UIKit
 
 class AnnouncementViewController: UIViewController{
     
+    //Announcement UIWebViewController
     @IBOutlet weak var announcementWebView: UIWebView!
     
+    //Load UIWebView
     override func viewDidLoad(){
+        //Standard Load
         super.viewDidLoad()
+        //Prevent white gaps on different devices
         self.automaticallyAdjustsScrollViewInsets = false
-        let url = "http://www.bcsdny.org/m/content.cfm?subpage=1841"
+        
+        //Initialize UIWebview with announcement URL
+        let url = "http://www.bcsdny.org/m/content.cfm?subpage=1841"//Announcement URL
         let requestURL = NSURL(string:url)
         let request = NSURLRequest(url: requestURL! as URL)
         announcementWebView.loadRequest(request as URLRequest)
     }
 
+    //Memory Exception Handling
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
