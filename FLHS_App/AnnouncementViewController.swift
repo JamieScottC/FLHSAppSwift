@@ -18,7 +18,7 @@ class AnnouncementViewController: UIViewController{
     override func viewDidLoad(){
         //Standard Load
         super.viewDidLoad()
-        //Prevent white gaps on different devices
+        //Hides Header of webpage behind navigation.
         self.automaticallyAdjustsScrollViewInsets = false
         
         //Initialize UIWebview with announcement URL

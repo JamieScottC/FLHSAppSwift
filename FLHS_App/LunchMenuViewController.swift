@@ -22,9 +22,6 @@ class LunchMenuViewController: UIViewController{
         //Standard load
         super.viewDidLoad()
         
-        //Prevents possible auto scaleing whitespace on different devices
-        self.automaticallyAdjustsScrollViewInsets = false
-        
         //Retrives date from phone
         let date = Date()
         let formatter = DateFormatter()
