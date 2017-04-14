@@ -9,13 +9,54 @@
 import UIKit
 
 class ScheduleTableViewController: UITableViewController {
-
+    let twoHourDelay5EarlyLunchTimes : [String] = ["9:45 - 10:10", "10:15 - 10:40", "10:45 - 11:10", "11:15 - 11:45", "11:50 - 12:15", "12:20 - 12:45", "12:50 - 1:15", "1:20 - 1:45", "1:50 - 2:15"]
+    let twoHourDelay5MiddleLunchTimes : [String] = ["9:45 - 10:10", "10:15 - 10:40", "10:45 - 11:10", "11:15 - 11:40", "11:45 - 12:15", "12:20 - 12:45", "12:50 - 1:15", "1:20 - 1:45", "1:50 - 2:15"]
+    let twoHourDelay5LateLunchTimes: [String] = ["9:45 - 10:10", "10:15 - 10:40", "10:45 - 11:10", "11:15 - 11:40", "11:45 - 12:10", "12:15 - 12:45", "12:50 - 1:15", "1:20 - 1:45", "1:50 - 2:15"]
+    let twoHourDelayNormalTimes : [String] = ["9:45 - 10:20", "10:25 - 11:00", "11:05 - 11:40", "11:45 - 12:20", "12:25 - 1:00", "1:05 -1:40", "1:45 - 2:20"]
+    let oneHourDelayEarlyLunchTimes: [String] = ["8:45 - 9:18", "9:23 - 9:56", "10:01 - 10:34", "10:39 - 11:09", "11:14 - 11:47", "11:52 - 12:25", "12:30 - 1:03", "1:08 - 1:41", "1:46 - 2:20"]
+    let oneHourDelayMiddleLunchTimes: [String] = ["8:45 - 9:18", "9:23 - 9:56", "10:01 - 10:34", "10:39 - 11:12", "11:17 - 11:47", "11:52 - 12:25", "12:30 - 1:03", "1:08 - 1:41", "1:46 - 2:20"]
+    let oneHourDelayLateLunchTimes : [String] = ["8:45 - 9:18", "9:23 - 9:56", "10:01 - 10:34", "10:39 - 11:12", "11:14 - 11:50", "11:55 - 12:25", "12:30 - 1:03", "1:08 - 1:41", "1:46 - 2:20"]
+    let advLunch1Courses: [String] = ["Course 1", "Course 2", "Advisory", "Course 3", "Lunch", "Course 4", "Course 5", "Course 6", "Course 7", "Course 8"]
+    let advLunch2Courses : [String] = ["Course 1", "Course 2", "Advisory", "Course 3", "Course 4", "Lunch", "Course 5", "Course 6", "Course 7", "Course 8"]
+    let advLunch3Courses : [String] = ["Course 1", "Course 2", "Advisory", "Course 3", "Course 4", "Course 5", "Lunch", "Course 6", "Course 7", "Course 8"]
+    let advLunch1Times: [String] = ["7:45 - 8:20", "8:25 - 9:00", "9:05 - 9:30", "9:35 - 10:10", "10:15 - 10:55", "11:00 - 11:35", "11:40 - 12:15", "12:20 - 12:55", "1:00 - 1:35", "1:40 - 2:15"]
+    let advLunch2Times : [String] = ["7:45 - 8:20", "8:25 - 9:00", "9:05 - 9:30", "9:35 - 10:10", "10:15 - 10:50", "10:55 - 11:35", "11:40 - 12:15", "12:20 - 12:55", "1:00 - 1:35", "1:40 - 2:15"]
+    let advLunch3Times : [String] = ["7:45 - 8:20", "8:25 - 9:00", "9:05 - 9:30", "9:35 - 10:10", "10:15 - 10:50", "10:55 - 11:30", "11:35 - 12:15", "12:20 - 12:55", "1:00 - 1:35", "1:40 - 2:15"]
+    let collabCourses : [String] = ["Course 1", "Course 2", "Course 3", "Course 4", "Collab Learning Lunch", "Course 5", "Course 6", "Course 7", "Course 8"]
+    let collabTimes : [String] = ["7:45 - 8:20", "8:25 - 9:00", "9:05 - 9:40", "9:45 - 10:20", "10:25 - 11:35", "11:40 - 12:15", "12:20 - 12:55", "1:00 - 1:35", "1:40 - 2:15"]
+    let day1Lunch1Courses: [String] = ["Course 1", "Course 2", "Lunch", "Course 4", "Course 5", "Course 7", "Course 8"]
+    let day1Lunch2Courses: [String] = ["Course 1", "Course 2", "Course 4", "Lunch", "Course 5", "Course 7", "Course 8"]
+    let day1Lunch3Courses: [String] = ["Course 1", "Course 2", "Course 4", "Course 5", "Lunch", "Course 7", "Course 8"]
+    let Lunch1Times : [String] = ["7:45 - 8:40", "8:45 - 9:40", "9:45 - 10:20", "10:25 - 11:20", "11:25 - 12:20", "12:25 - 1:20", "1:25 - 2:20"]
+    let Lunch2Times : [String] = ["7:45 - 8:40", "8:45 - 9:40", "9:45 - 10:40", "10:45 - 11:20", "11:25 - 12:20", "12:25 - 1:20", "1:25 - 2:20"]
+    let Lunch3Times: [String] = ["7:45 - 8:40", "8:45 - 9:40", "9:45 - 10:40", "10:45 - 11:40", "11:45 - 12:20", "12:25 - 1:20", "1:25 - 2:20"]
+    let day2Lunch1Courses : [String] = ["Course 1", "Course 2", "Lunch", "Course 3", "Course 6", "Course 7", "Course 8"]
+    let day2Lunch2Courses : [String] = ["Course 1", "Course 2", "Course 3", "Lunch", "Course 6", "Course 7", "Course 8"]
+    let day2Lunch3Courses : [String] = ["Course 1", "Course 2", "Course 3", "Course 6", "Lunch", "Course 7", "Course 8"]
+    let day3Lunch1Courses : [String] = ["Course 2", "Course 3", "Lunch", "Course 4", "Course 5", "Course 6", "Course 7"]
+    let day3Lunch2Courses : [String] = ["Course 2", "Course 3", "Course 4", "Lunch", "Course 5", "Course 6", "Course 7"]
+    let day3Lunch3Courses : [String] = ["Course 2", "Course 3", "Course 4", "Course 5", "Lunch", "Course 6", "Course 7"]
+    let day4Lunch1Courses : [String] = ["Course 1", "Course 3", "Lunch", "Course 4", "Course 5", "Course 6", "Course 8"]
+    let day4Lunch2Courses : [String] = ["Course 1", "Course 3", "Course 4", "Lunch", "Course 5", "Course 6", "Course 8"]
+    let day4Lunch3Courses : [String] = ["Course 1", "Course 3", "Course 4", "Course 5", "Lunch", "Course 6", "Course 8"]
+    let day5Lunch1Courses : [String] = ["Course 1", "Course 2", "Course 3", "Lunch", "Course 4", "Course 5", "Course 6", "Course 7", "Course 8"]
+    let day5Lunch2Courses : [String] = ["Course 1", "Course 2", "Course 3", "Course 4", "Lunch", "Course 5", "Course 6", "Course 7", "Course 8"]
+    let day5Lunch3Courses : [String] = ["Course 1", "Course 2", "Course 3", "Course 4", "Course 5", "Lunch", "Course 6", "Course 7", "Course 8"]
+    let day5Lunch1Times : [String] = ["7:45 - 8:25", "8:30 - 9:10", "9:15 - 9:55", "10:00 - 10:30", "10:35 - 11:15", "11:20 - 12:00", "12:05 - 12:45", "12:50 - 1:30", "1:35 - 2:15"]
+    let day5Lunch2Times : [String] = ["7:45 - 8:25", "8:30 - 9:10", "9:15 - 9:55", "10:00 - 10:40", "10:45 - 11:15", "11:20 - 12:00", "12:05 - 12:45", "12:50 - 1:30", "1:35 - 2:15"]
+    let day5Lunch3Times : [String] = ["7:45 - 8:25", "8:30 - 9:10", "9:15 - 9:55", "10:00 - 10:40", "10:45 - 11:25", "11:30 - 12:00", "12:05 - 12:45", "12:50 - 1:30", "1:35 - 2:15"]
+    
+    
+    var dayType = "A"
     var courses = [Course]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Find Day Type we are trying to load schedule for
+        getDay()
+        let lunch : String = getLunch()
         //Load Courses
-        loadCourses()
+        loadCourses(lunchType: lunch)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -102,11 +143,121 @@ class ScheduleTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    private func loadCourses() {
-        let course1 = Course(name: "French", time: "8:45 - 9:15")
-        let course2 = Course(name: "Math", time: "2:45 - 5:15")
-        let course3 = Course(name: "French", time: "4:45 - 5:15")
-        courses += [course1, course2, course3]
+    
+    private func loadCourses(lunchType : String) {
+        if dayType == "A" || dayType == "1" {
+            if(lunchType == "early") {
+                for index in 0 ... day1Lunch1Courses.count - 1 {
+                    let course = Course(name: day1Lunch1Courses[index], time: Lunch1Times[index])
+                    courses.append(course)
+                }
+            } else if (lunchType == "middle") {
+                for index in 0 ... day1Lunch2Courses.count - 1 {
+                    let course = Course(name: day1Lunch2Courses[index], time: Lunch2Times[index])
+                    courses.append(course)
+                }
+            } else if (lunchType == "late") {
+                for index in 0 ... day1Lunch1Courses.count - 1 {
+                    let course = Course(name: day1Lunch3Courses[index], time: Lunch3Times[index])
+                    courses.append(course)
+                }
+            }
+        } else if dayType == "B" || dayType == "2" {
+            if(lunchType == "early") {
+                for index in 0 ... day2Lunch1Courses.count - 1 {
+                    let course = Course(name: day2Lunch1Courses[index], time: Lunch1Times[index])
+                    courses.append(course)
+                }
+            } else if (lunchType == "middle") {
+                for index in 0 ... day2Lunch2Courses.count - 1 {
+                    let course = Course(name: day2Lunch2Courses[index], time: Lunch2Times[index])
+                    courses.append(course)
+                }
+            } else if (lunchType == "late") {
+                for index in 0 ... day2Lunch1Courses.count - 1 {
+                    let course = Course(name: day2Lunch3Courses[index], time: Lunch3Times[index])
+                    courses.append(course)
+                }
+            }
+        } else if dayType == "C" || dayType == "3" {
+            if(lunchType == "early") {
+                for index in 0 ... day3Lunch1Courses.count - 1 {
+                    let course = Course(name: day3Lunch1Courses[index], time: Lunch1Times[index])
+                    courses.append(course)
+                }
+            } else if (lunchType == "middle") {
+                for index in 0 ... day3Lunch2Courses.count - 1 {
+                    let course = Course(name: day3Lunch2Courses[index], time: Lunch2Times[index])
+                    courses.append(course)
+                }
+            } else if (lunchType == "late") {
+                for index in 0 ... day3Lunch1Courses.count - 1 {
+                    let course = Course(name: day1Lunch3Courses[index], time: Lunch3Times[index])
+                    courses.append(course)
+                }
+            }
+        } else if dayType == "D" || dayType == "4" {
+            if(lunchType == "early") {
+                for index in 0 ... day4Lunch1Courses.count - 1 {
+                    let course = Course(name: day4Lunch1Courses[index], time: Lunch1Times[index])
+                    courses.append(course)
+                }
+            } else if (lunchType == "middle") {
+                for index in 0 ... day4Lunch2Courses.count - 1 {
+                    let course = Course(name: day4Lunch2Courses[index], time: Lunch2Times[index])
+                    courses.append(course)
+                }
+            } else if (lunchType == "late") {
+                for index in 0 ... day4Lunch1Courses.count - 1 {
+                    let course = Course(name: day4Lunch3Courses[index], time: Lunch3Times[index])
+                    courses.append(course)
+                }
+            }
+        } else if dayType == "E" || dayType == "5" {
+            if(lunchType == "early") {
+                for index in 0 ... day1Lunch1Courses.count - 1 {
+                    let course = Course(name: day1Lunch1Courses[index], time: Lunch1Times[index])
+                    courses.append(course)
+                }
+            } else if (lunchType == "middle") {
+                for index in 0 ... day1Lunch2Courses.count - 1 {
+                    let course = Course(name: day1Lunch2Courses[index], time: Lunch2Times[index])
+                    courses.append(course)
+                }
+            } else if (lunchType == "late") {
+                for index in 0 ... day1Lunch1Courses.count - 1 {
+                    let course = Course(name: day1Lunch3Courses[index], time: Lunch3Times[index])
+                    courses.append(course)
+                }
+            }
+        } else if dayType == "Adv E" || dayType == "Adv 5" {
+            if(lunchType == "early") {
+                for index in 0 ... advLunch1Courses.count - 1 {
+                    let course = Course(name: advLunch1Courses[index], time: advLunch1Times[index])
+                    courses.append(course)
+                }
+            } else if (lunchType == "middle") {
+                for index in 0 ... advLunch2Courses.count - 1 {
+                    let course = Course(name: advLunch2Courses[index], time: Lunch2Times[index])
+                    courses.append(course)
+                }
+            } else if (lunchType == "late") {
+                for index in 0 ... day1Lunch1Courses.count - 1 {
+                    let course = Course(name: day1Lunch3Courses[index], time: Lunch3Times[index])
+                    courses.append(course)
+                }
+            }
+        }
+        
+    }
+    
+    private func getDay() {
+        //TODO: Find what day it is.
+        dayType = "A"
+    }
+    
+    private func getLunch() -> String {
+        return "early"
     }
     
 }
