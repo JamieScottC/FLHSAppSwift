@@ -2,7 +2,7 @@
 //  AnnouncementViewController.swift
 //  FLHS_App
 //
-//  Created by Brian Poor on 4/14/17.
+//  Created by Brian Poor on 4/14/17
 //  Copyright © 2017 FLHS Computer Science Club. All rights reserved.
 //
 
