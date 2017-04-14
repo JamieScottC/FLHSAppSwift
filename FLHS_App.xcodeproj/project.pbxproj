@@ -19,6 +19,8 @@
 		05EF13AD1E9ED7880076F9CD /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EF13AC1E9ED7880076F9CD /* ScheduleTableViewCell.swift */; };
 		05EF13AF1E9EDC4E0076F9CD /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EF13AE1E9EDC4E0076F9CD /* ScheduleTableViewController.swift */; };
 		05EF13B11E9EDF1D0076F9CD /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EF13B01E9EDF1D0076F9CD /* Course.swift */; };
+		D37024DC1EA167160057D5F7 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37024DB1EA167160057D5F7 /* AnnouncementViewController.swift */; };
+		D37024DE1EA169BF0057D5F7 /* LunchMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37024DD1EA169BF0057D5F7 /* LunchMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		05EF13AC1E9ED7880076F9CD /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		05EF13AE1E9EDC4E0076F9CD /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		05EF13B01E9EDF1D0076F9CD /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		D37024DB1EA167160057D5F7 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
+		D37024DD1EA169BF0057D5F7 /* LunchMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LunchMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 		059AB42F1E22CEE3008CE585 /* FLHS_App */ = {
 			isa = PBXGroup;
 			children = (
+				D37024DB1EA167160057D5F7 /* AnnouncementViewController.swift */,
+				D37024DD1EA169BF0057D5F7 /* LunchMenuViewController.swift */,
 				059AB4301E22CEE3008CE585 /* AppDelegate.swift */,
 				059AB4321E22CEE3008CE585 /* ViewController.swift */,
 				059AB4341E22CEE3008CE585 /* Main.storyboard */,
@@ -275,7 +281,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				05EF13AF1E9EDC4E0076F9CD /* ScheduleTableViewController.swift in Sources */,
+				D37024DE1EA169BF0057D5F7 /* LunchMenuViewController.swift in Sources */,
 				05EF13B11E9EDF1D0076F9CD /* Course.swift in Sources */,
+				D37024DC1EA167160057D5F7 /* AnnouncementViewController.swift in Sources */,
 				05EF13AB1E9EC8AF0076F9CD /* CalendarViewController.swift in Sources */,
 				05EF13AD1E9ED7880076F9CD /* ScheduleTableViewCell.swift in Sources */,
 				059AB4331E22CEE3008CE585 /* ViewController.swift in Sources */,
