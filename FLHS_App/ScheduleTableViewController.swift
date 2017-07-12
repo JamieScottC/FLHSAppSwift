@@ -8,11 +8,12 @@
 
 import UIKit
 import Parse
-import os.log
+import Foundation
 
 class ScheduleTableViewController: UITableViewController {
     
     @IBOutlet var DateButton: UIButton!
+    @IBOutlet var SwitchLunchButton: UIBarButtonItem!
     
     let twoHourDelay5EarlyLunchTimes : [String] = ["9:45 - 10:10", "10:15 - 10:40", "10:45 - 11:10", "11:15 - 11:45", "11:50 - 12:15", "12:20 - 12:45", "12:50 - 1:15", "1:20 - 1:45", "1:50 - 2:15"]
     let twoHourDelay5MiddleLunchTimes : [String] = ["9:45 - 10:10", "10:15 - 10:40", "10:45 - 11:10", "11:15 - 11:40", "11:45 - 12:15", "12:20 - 12:45", "12:50 - 1:15", "1:20 - 1:45", "1:50 - 2:15"]
@@ -55,6 +56,7 @@ class ScheduleTableViewController: UITableViewController {
     var dayType = "A"
     var courses = [Course]()
     var queryDate : String!
+    var lunchType : String!
     override func viewDidLoad() {
         super.viewDidLoad()
         //Check if we have a pre-selected queryDate (chosen with date button)
@@ -67,6 +69,7 @@ class ScheduleTableViewController: UITableViewController {
             formatter.dateFormat = "MM/dd"
             queryDate = formatter.string(from: date)
         }
+        //Set the button text to the query date. This will orient the user as to which day they are viewing.
         DateButton.setTitle(queryDate, for: .normal)
         //Find Day Type we are trying to load schedule for
         getDay(queryDate: queryDate)
@@ -287,7 +290,7 @@ class ScheduleTableViewController: UITableViewController {
                     let strDayIndex = dates[index].index((dates[index].startIndex), offsetBy: 6)
                      self.dayType = dates[index].substring(from: strDayIndex)
                     //Get lunch
-                     let lunch : String = self.getLunch()
+                    let lunch : String = self.getLunch().lowercased()
                     //Load the courses.
                      self.loadCourses(lunchType: lunch)
                     //Let's display this schedule!
@@ -304,6 +307,10 @@ class ScheduleTableViewController: UITableViewController {
     
     private func getLunch() -> String {
         //TODO: Determine method for getting Lunches...
+        if (lunchType != nil) {
+            //Preselected. Let's follow that.
+            return lunchType
+        }
         return "early"
     }
     
@@ -312,9 +319,9 @@ class ScheduleTableViewController: UITableViewController {
     private func saveQueryDate(queryDate: String) {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(queryDate, toFile: UserScheduleData.ArchiveURL.path)
         if isSuccessfulSave {
-            os_log("Successfully saved query date", log: OSLog.default, type: .debug)
+            print("Successfully saved query date")
         } else {
-            os_log("Unsuccessfully saved query date", log: OSLog.default, type: .debug)
+            print("Unsuccessfully saved query date")
         }
     }
     
@@ -323,6 +330,9 @@ class ScheduleTableViewController: UITableViewController {
     }
     
     
+    @IBAction func switchLunch(_ sender: Any) {
+        
+    }
     
     
 }

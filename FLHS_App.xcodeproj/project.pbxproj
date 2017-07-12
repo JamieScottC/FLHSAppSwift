@@ -15,6 +15,7 @@
 		054F70AD1EB03F4700971779 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054F70A91EB03F4700971779 /* SystemConfiguration.framework */; };
 		056FC7261F15B15700777B8F /* UserScheduleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056FC7251F15B15700777B8F /* UserScheduleData.swift */; };
 		0578A2F91F15CCF2001608C0 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0578A2F81F15CCF2001608C0 /* DatePickerViewController.swift */; };
+		057D50941F16AE8A00317DBE /* SwitchLunchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D50931F16AE8A00317DBE /* SwitchLunchTableViewController.swift */; };
 		059AB4311E22CEE3008CE585 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AB4301E22CEE3008CE585 /* AppDelegate.swift */; };
 		059AB4331E22CEE3008CE585 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AB4321E22CEE3008CE585 /* ViewController.swift */; };
 		059AB4361E22CEE3008CE585 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 059AB4341E22CEE3008CE585 /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		054F70A91EB03F4700971779 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		056FC7251F15B15700777B8F /* UserScheduleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserScheduleData.swift; sourceTree = "<group>"; };
 		0578A2F81F15CCF2001608C0 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		057D50931F16AE8A00317DBE /* SwitchLunchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchLunchTableViewController.swift; sourceTree = "<group>"; };
 		059AB42D1E22CEE3008CE585 /* FLHS_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLHS_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		059AB4301E22CEE3008CE585 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		059AB4321E22CEE3008CE585 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				059AB4301E22CEE3008CE585 /* AppDelegate.swift */,
 				059AB4321E22CEE3008CE585 /* ViewController.swift */,
 				059AB4341E22CEE3008CE585 /* Main.storyboard */,
+				057D50931F16AE8A00317DBE /* SwitchLunchTableViewController.swift */,
 				0578A2F81F15CCF2001608C0 /* DatePickerViewController.swift */,
 				059AB43A1E22CEE3008CE585 /* Assets.xcassets */,
 				059AB43C1E22CEE3008CE585 /* LaunchScreen.storyboard */,
@@ -256,6 +259,7 @@
 				TargetAttributes = {
 					059AB42C1E22CEE3008CE585 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					059AB4431E22CEE3008CE585 = {
@@ -330,6 +334,7 @@
 				D37024DC1EA167160057D5F7 /* AnnouncementViewController.swift in Sources */,
 				05EF13AB1E9EC8AF0076F9CD /* CalendarViewController.swift in Sources */,
 				05EF13AD1E9ED7880076F9CD /* ScheduleTableViewCell.swift in Sources */,
+				057D50941F16AE8A00317DBE /* SwitchLunchTableViewController.swift in Sources */,
 				059AB4331E22CEE3008CE585 /* ViewController.swift in Sources */,
 				059AB4391E22CEE3008CE585 /* FLHS_App.xcdatamodeld in Sources */,
 				059AB4311E22CEE3008CE585 /* AppDelegate.swift in Sources */,
@@ -482,6 +487,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FLHS_App",
@@ -491,6 +497,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.bcsdny.FLHS-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FLHS_App/FLHS_App-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -499,6 +507,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FLHS_App",
@@ -508,6 +517,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.bcsdny.FLHS-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FLHS_App/FLHS_App-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

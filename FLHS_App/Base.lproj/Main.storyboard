@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -244,15 +245,24 @@
                                 <segue destination="Qra-1b-xtQ" kind="show" id="J0o-d3-TNZ"/>
                             </connections>
                         </button>
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="fzX-dL-DAX">
-                            <connections>
-                                <segue destination="Xgm-21-ezi" kind="show" id="MaM-Lc-79K"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="edit" id="fzX-dL-DAX">
+                                <connections>
+                                    <segue destination="Xgm-21-ezi" kind="show" id="MaM-Lc-79K"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Early" id="b1W-6F-SCz">
+                                <connections>
+                                    <action selector="switchLunch:" destination="zuK-I4-AfI" id="4KI-lH-ahC"/>
+                                    <segue destination="oXr-05-3b8" kind="show" id="T1P-LG-wbJ"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="DateButton" destination="l9f-R3-Mw4" id="lbB-ra-zPn"/>
+                        <outlet property="SwitchLunchButton" destination="b1W-6F-SCz" id="qej-pz-AeP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPG-PI-ROb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -309,6 +319,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I6p-Z9-b5h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3184" y="-250"/>
+        </scene>
+        <!--Switch Lunch Table View Controller-->
+        <scene sceneID="O5A-02-T9H">
+            <objects>
+                <tableViewController id="oXr-05-3b8" customClass="SwitchLunchTableViewController" customModule="FLHS_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="DEs-xD-Vk3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LabelCell" textLabel="2X0-2f-jxN" style="IBUITableViewCellStyleDefault" id="yRa-Ql-0ZS">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yRa-Ql-0ZS" id="QFI-9I-6sH">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2X0-2f-jxN">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oXr-05-3b8" id="jKQ-aH-E9o"/>
+                            <outlet property="delegate" destination="oXr-05-3b8" id="ELY-aF-zJh"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="zuK-I4-AfI" kind="show" identifier="DisplayScheduleLunchSegue" id="btG-YO-YSA"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zYD-es-Dtd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4054" y="-264"/>
         </scene>
         <!--Customize Schedule-->
         <scene sceneID="Tnj-Nz-Uor">
@@ -701,6 +751,6 @@
         <image name="scheduleIcon" width="150" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1Ql-ge-xiW"/>
+        <segue reference="btG-YO-YSA"/>
     </inferredMetricsTieBreakers>
 </document>
