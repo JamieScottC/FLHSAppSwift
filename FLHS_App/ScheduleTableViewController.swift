@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Parse
+import os.log
 
 class ScheduleTableViewController: UITableViewController {
+    
+    
     let twoHourDelay5EarlyLunchTimes : [String] = ["9:45 - 10:10", "10:15 - 10:40", "10:45 - 11:10", "11:15 - 11:45", "11:50 - 12:15", "12:20 - 12:45", "12:50 - 1:15", "1:20 - 1:45", "1:50 - 2:15"]
     let twoHourDelay5MiddleLunchTimes : [String] = ["9:45 - 10:10", "10:15 - 10:40", "10:45 - 11:10", "11:15 - 11:40", "11:45 - 12:15", "12:20 - 12:45", "12:50 - 1:15", "1:20 - 1:45", "1:50 - 2:15"]
     let twoHourDelay5LateLunchTimes: [String] = ["9:45 - 10:10", "10:15 - 10:40", "10:45 - 11:10", "11:15 - 11:40", "11:45 - 12:10", "12:15 - 12:45", "12:50 - 1:15", "1:20 - 1:45", "1:50 - 2:15"]
@@ -51,12 +55,21 @@ class ScheduleTableViewController: UITableViewController {
     var courses = [Course]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        var queryDate : String;
+        //Check if we have a pre-selected queryDate (chosen with date button)
+        if let queryDateData = loadQueryDate() {
+            //That's great! We loaded successfully.
+            queryDate = queryDateData.queryDate;
+        } else {
+            //Shoot. There probably wasn't a UserScheduleData object. We'll just have to use the current date instead.
+            let date = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MM/dd"
+            queryDate = formatter.string(from: date)
+        }
+
         //Find Day Type we are trying to load schedule for
-        getDay()
-        let lunch : String = getLunch()
-        //Load Courses
-        loadCourses(lunchType: lunch)
+        getDay(queryDate: queryDate)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -145,7 +158,24 @@ class ScheduleTableViewController: UITableViewController {
     */
     
     private func loadCourses(lunchType : String) {
-        if dayType == "A" || dayType == "1" {
+        if dayType == "D" || dayType == "4" {
+            if(lunchType == "early") {
+                for index in 0 ... day4Lunch1Courses.count - 1 {
+                    let course = Course(name: day4Lunch1Courses[index], time: Lunch1Times[index])
+                    courses.append(course)
+                }
+            } else if (lunchType == "middle") {
+                for index in 0 ... day4Lunch2Courses.count - 1 {
+                    let course = Course(name: day4Lunch2Courses[index], time: Lunch2Times[index])
+                    courses.append(course)
+                }
+            } else if (lunchType == "late") {
+                for index in 0 ... day4Lunch1Courses.count - 1 {
+                    let course = Course(name: day4Lunch3Courses[index], time: Lunch3Times[index])
+                    courses.append(course)
+                }
+            }
+        } else if dayType == "A" || dayType == "1" {
             if(lunchType == "early") {
                 for index in 0 ... day1Lunch1Courses.count - 1 {
                     let course = Course(name: day1Lunch1Courses[index], time: Lunch1Times[index])
@@ -196,23 +226,6 @@ class ScheduleTableViewController: UITableViewController {
                     courses.append(course)
                 }
             }
-        } else if dayType == "D" || dayType == "4" {
-            if(lunchType == "early") {
-                for index in 0 ... day4Lunch1Courses.count - 1 {
-                    let course = Course(name: day4Lunch1Courses[index], time: Lunch1Times[index])
-                    courses.append(course)
-                }
-            } else if (lunchType == "middle") {
-                for index in 0 ... day4Lunch2Courses.count - 1 {
-                    let course = Course(name: day4Lunch2Courses[index], time: Lunch2Times[index])
-                    courses.append(course)
-                }
-            } else if (lunchType == "late") {
-                for index in 0 ... day4Lunch1Courses.count - 1 {
-                    let course = Course(name: day4Lunch3Courses[index], time: Lunch3Times[index])
-                    courses.append(course)
-                }
-            }
         } else if dayType == "E" || dayType == "5" {
             if(lunchType == "early") {
                 for index in 0 ... day1Lunch1Courses.count - 1 {
@@ -247,17 +260,69 @@ class ScheduleTableViewController: UITableViewController {
                     courses.append(course)
                 }
             }
+        } else if dayType == "Collab E" || dayType == "Collab 5"{
+            for index in 0 ... collabCourses.count - 1 {
+                let course = Course(name: collabCourses[index], time: collabTimes[index])
+                courses.append(course)
+            }
         }
         
     }
     
-    private func getDay() {
-        //TODO: Find what day it is.
-        dayType = "A"
+    private func getDay(queryDate: String) {
+        //TODO: Let querydate be something other than 'currentDate'
+        //Retrives date from phone
+        
+        
+        //Get Parse Config Data
+        PFConfig.getInBackground { (config, error) in
+            let dates = config?["WhatDay"] as! Array<String>
+            //Go through each day item.
+            for index in 0 ... (dates.count) - 1 {
+                let strIndex = dates[index].index((dates[index].startIndex), offsetBy: 5)
+                let subDate = dates[index].substring(to: strIndex)
+                //If this particular date matches the queryDate...
+                if subDate == queryDate {
+                    //Get and set the day code
+                    let strDayIndex = dates[index].index((dates[index].startIndex), offsetBy: 6)
+                     self.dayType = dates[index].substring(from: strDayIndex)
+                    //Get lunch
+                     let lunch : String = self.getLunch()
+                    //Load the courses.
+                     self.loadCourses(lunchType: lunch)
+                    //Let's display this schedule!
+                     self.tableView.reloadData()
+                }
+            }
+        
+        }
+        
+        //TODO: Return nil and handle no day found.
+        
+        
     }
     
     private func getLunch() -> String {
+        //TODO: Determine method for getting Lunches...
         return "early"
     }
+    
+    //MARK: Persisting Data
+    
+    private func saveQueryDate(queryDate: String) {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(queryDate, toFile: UserScheduleData.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Successfully saved query date", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Unsuccessfully saved query date", log: OSLog.default, type: .debug)
+        }
+    }
+    
+    private func loadQueryDate() -> UserScheduleData? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: UserScheduleData.ArchiveURL.path) as? UserScheduleData
+    }
+    
+    
+    
     
 }

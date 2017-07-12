@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Enable storing and querying data from Local Datastore.
+        // Remove this line if you don't want to use Local Datastore features or want to use cachePolicy.
+        Parse.enableLocalDatastore()
+        
+        let parseConfiguration = ParseClientConfiguration(block: { (ParseMutableClientConfiguration) -> Void in
+            ParseMutableClientConfiguration.applicationId = "rxnQYcc4cGE16XzZEzkjLbobtqscs8xt7bqxj40g"
+            ParseMutableClientConfiguration.clientKey = "83Gx5MS2NkfDeagqKsj0f6hTdVt1yzftQkIJyROF"
+            ParseMutableClientConfiguration.server = "https://flhsappmigration.herokuapp.com/parse"
+        })
+        
+        Parse.initialize(with: parseConfiguration)
+        
+        
+        // ****************************************************************************
+        // Uncomment and fill in with your Parse credentials:
+        // Parse.setApplicationId("your_application_id", clientKey: "your_client_key")
+        //
+        // If you are using Facebook, uncomment and add your FacebookAppID to your bundle's plist as
+        // described here: https://developers.facebook.com/docs/getting-started/facebook-sdk-for-ios/
+        // Uncomment the line inside ParseStartProject-Bridging-Header and the following line here:
+        // PFFacebookUtils.initializeFacebook()
+        // ****************************************************************************
+        
+        PFUser.enableAutomaticUser()
+        
+        let defaultACL = PFACL();
+        
+        // If you would like all objects to be private by default, remove this line.
+        defaultACL.getPublicReadAccess = true
+        
         return true
     }
 

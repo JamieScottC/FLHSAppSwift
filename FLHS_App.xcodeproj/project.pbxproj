@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		054F70A41EB03CDC00971779 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054F70A21EB03CDC00971779 /* Bolts.framework */; };
+		054F70A51EB03CDC00971779 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054F70A31EB03CDC00971779 /* Parse.framework */; };
+		054F70AA1EB03F4700971779 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054F70A61EB03F4700971779 /* AudioToolbox.framework */; };
+		054F70AB1EB03F4700971779 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 054F70A71EB03F4700971779 /* libsqlite3.tbd */; };
+		054F70AC1EB03F4700971779 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 054F70A81EB03F4700971779 /* libstdc++.6.tbd */; };
+		054F70AD1EB03F4700971779 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054F70A91EB03F4700971779 /* SystemConfiguration.framework */; };
+		056FC7261F15B15700777B8F /* UserScheduleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056FC7251F15B15700777B8F /* UserScheduleData.swift */; };
+		0578A2F91F15CCF2001608C0 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0578A2F81F15CCF2001608C0 /* DatePickerViewController.swift */; };
 		059AB4311E22CEE3008CE585 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AB4301E22CEE3008CE585 /* AppDelegate.swift */; };
 		059AB4331E22CEE3008CE585 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AB4321E22CEE3008CE585 /* ViewController.swift */; };
 		059AB4361E22CEE3008CE585 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 059AB4341E22CEE3008CE585 /* Main.storyboard */; };
@@ -41,6 +49,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		054F70A21EB03CDC00971779 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = FLHS_App/Bolts.framework; sourceTree = "<group>"; };
+		054F70A31EB03CDC00971779 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = FLHS_App/Parse.framework; sourceTree = "<group>"; };
+		054F70A61EB03F4700971779 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		054F70A71EB03F4700971779 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		054F70A81EB03F4700971779 /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
+		054F70A91EB03F4700971779 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		056FC7251F15B15700777B8F /* UserScheduleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserScheduleData.swift; sourceTree = "<group>"; };
+		0578A2F81F15CCF2001608C0 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		059AB42D1E22CEE3008CE585 /* FLHS_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLHS_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		059AB4301E22CEE3008CE585 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		059AB4321E22CEE3008CE585 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +71,8 @@
 		059AB44F1E22CEE3008CE585 /* FLHS_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FLHS_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		059AB4531E22CEE3008CE585 /* FLHS_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLHS_AppUITests.swift; sourceTree = "<group>"; };
 		059AB4551E22CEE3008CE585 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05A3800C1EB03C4000D1D399 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../Downloads/Parse-iOS (1)/Bolts.framework"; sourceTree = "<group>"; };
+		05A3800D1EB03C4000D1D399 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../Downloads/Parse-iOS (1)/Parse.framework"; sourceTree = "<group>"; };
 		05EF13AA1E9EC8AF0076F9CD /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		05EF13AC1E9ED7880076F9CD /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		05EF13AE1E9EDC4E0076F9CD /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +86,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				054F70AA1EB03F4700971779 /* AudioToolbox.framework in Frameworks */,
+				054F70AB1EB03F4700971779 /* libsqlite3.tbd in Frameworks */,
+				054F70AC1EB03F4700971779 /* libstdc++.6.tbd in Frameworks */,
+				054F70AD1EB03F4700971779 /* SystemConfiguration.framework in Frameworks */,
+				054F70A41EB03CDC00971779 /* Bolts.framework in Frameworks */,
+				054F70A51EB03CDC00971779 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +119,7 @@
 				059AB4471E22CEE3008CE585 /* FLHS_AppTests */,
 				059AB4521E22CEE3008CE585 /* FLHS_AppUITests */,
 				059AB42E1E22CEE3008CE585 /* Products */,
+				05A3800B1EB03C4000D1D399 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +141,7 @@
 				059AB4301E22CEE3008CE585 /* AppDelegate.swift */,
 				059AB4321E22CEE3008CE585 /* ViewController.swift */,
 				059AB4341E22CEE3008CE585 /* Main.storyboard */,
+				0578A2F81F15CCF2001608C0 /* DatePickerViewController.swift */,
 				059AB43A1E22CEE3008CE585 /* Assets.xcassets */,
 				059AB43C1E22CEE3008CE585 /* LaunchScreen.storyboard */,
 				059AB43F1E22CEE3008CE585 /* Info.plist */,
@@ -124,6 +150,7 @@
 				05EF13AC1E9ED7880076F9CD /* ScheduleTableViewCell.swift */,
 				05EF13AE1E9EDC4E0076F9CD /* ScheduleTableViewController.swift */,
 				05EF13B01E9EDF1D0076F9CD /* Course.swift */,
+				056FC7251F15B15700777B8F /* UserScheduleData.swift */,
 			);
 			path = FLHS_App;
 			sourceTree = "<group>";
@@ -144,6 +171,21 @@
 				059AB4551E22CEE3008CE585 /* Info.plist */,
 			);
 			path = FLHS_AppUITests;
+			sourceTree = "<group>";
+		};
+		05A3800B1EB03C4000D1D399 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				054F70A61EB03F4700971779 /* AudioToolbox.framework */,
+				054F70A71EB03F4700971779 /* libsqlite3.tbd */,
+				054F70A81EB03F4700971779 /* libstdc++.6.tbd */,
+				054F70A91EB03F4700971779 /* SystemConfiguration.framework */,
+				054F70A21EB03CDC00971779 /* Bolts.framework */,
+				054F70A31EB03CDC00971779 /* Parse.framework */,
+				05A3800C1EB03C4000D1D399 /* Bolts.framework */,
+				05A3800D1EB03C4000D1D399 /* Parse.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,8 +323,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				05EF13AF1E9EDC4E0076F9CD /* ScheduleTableViewController.swift in Sources */,
+				056FC7261F15B15700777B8F /* UserScheduleData.swift in Sources */,
 				D37024DE1EA169BF0057D5F7 /* LunchMenuViewController.swift in Sources */,
 				05EF13B11E9EDF1D0076F9CD /* Course.swift in Sources */,
+				0578A2F91F15CCF2001608C0 /* DatePickerViewController.swift in Sources */,
 				D37024DC1EA167160057D5F7 /* AnnouncementViewController.swift in Sources */,
 				05EF13AB1E9EC8AF0076F9CD /* CalendarViewController.swift in Sources */,
 				05EF13AD1E9ED7880076F9CD /* ScheduleTableViewCell.swift in Sources */,
@@ -438,7 +482,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FLHS_App",
+				);
 				INFOPLIST_FILE = FLHS_App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.bcsdny.FLHS-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -450,7 +499,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FLHS_App",
+				);
 				INFOPLIST_FILE = FLHS_App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.bcsdny.FLHS-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
