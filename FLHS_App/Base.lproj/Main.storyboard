@@ -199,7 +199,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="veX-FO-y0u" id="P7K-hy-wnx">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abg-3k-u5q">
@@ -251,6 +251,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="DateButton" destination="l9f-R3-Mw4" id="lbB-ra-zPn"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPG-PI-ROb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -283,6 +286,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5p-3Z-8G1">
                                 <rect key="frame" x="169" y="536" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="saveQueryDate:" destination="Qra-1b-xtQ" eventType="touchUpInside" id="77G-AF-wMa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -296,7 +302,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="DateButton" destination="c5p-3Z-8G1" id="hPX-1B-zV0"/>
+                        <outlet property="DatePicker" destination="bVJ-Tk-gPH" id="gPk-bv-Fp0"/>
+                        <segue destination="zuK-I4-AfI" kind="show" identifier="displayScheduleSegue" id="1Ql-ge-xiW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I6p-Z9-b5h" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -693,4 +700,7 @@
         <image name="lunchMenuIcon" width="150" height="150"/>
         <image name="scheduleIcon" width="150" height="150"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="1Ql-ge-xiW"/>
+    </inferredMetricsTieBreakers>
 </document>

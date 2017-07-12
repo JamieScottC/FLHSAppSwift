@@ -12,6 +12,7 @@ import os.log
 
 class ScheduleTableViewController: UITableViewController {
     
+    @IBOutlet var DateButton: UIButton!
     
     let twoHourDelay5EarlyLunchTimes : [String] = ["9:45 - 10:10", "10:15 - 10:40", "10:45 - 11:10", "11:15 - 11:45", "11:50 - 12:15", "12:20 - 12:45", "12:50 - 1:15", "1:20 - 1:45", "1:50 - 2:15"]
     let twoHourDelay5MiddleLunchTimes : [String] = ["9:45 - 10:10", "10:15 - 10:40", "10:45 - 11:10", "11:15 - 11:40", "11:45 - 12:15", "12:20 - 12:45", "12:50 - 1:15", "1:20 - 1:45", "1:50 - 2:15"]
@@ -53,21 +54,20 @@ class ScheduleTableViewController: UITableViewController {
     
     var dayType = "A"
     var courses = [Course]()
+    var queryDate : String!
     override func viewDidLoad() {
         super.viewDidLoad()
-        var queryDate : String;
         //Check if we have a pre-selected queryDate (chosen with date button)
-        if let queryDateData = loadQueryDate() {
-            //That's great! We loaded successfully.
-            queryDate = queryDateData.queryDate;
+        if (queryDate != nil) {
+            //That's great! A date is already selected and sent through a segue.
         } else {
-            //Shoot. There probably wasn't a UserScheduleData object. We'll just have to use the current date instead.
+            //Shoot. A query date has not been selected with the date picker. We'll just have to use the current date instead.
             let date = Date()
             let formatter = DateFormatter()
             formatter.dateFormat = "MM/dd"
             queryDate = formatter.string(from: date)
         }
-
+        DateButton.setTitle(queryDate, for: .normal)
         //Find Day Type we are trying to load schedule for
         getDay(queryDate: queryDate)
         
