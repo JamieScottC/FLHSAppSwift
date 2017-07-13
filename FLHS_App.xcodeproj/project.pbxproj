@@ -25,6 +25,7 @@
 		059AB43E1E22CEE3008CE585 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 059AB43C1E22CEE3008CE585 /* LaunchScreen.storyboard */; };
 		059AB4491E22CEE3008CE585 /* FLHS_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AB4481E22CEE3008CE585 /* FLHS_AppTests.swift */; };
 		059AB4541E22CEE3008CE585 /* FLHS_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AB4531E22CEE3008CE585 /* FLHS_AppUITests.swift */; };
+		05EA12D11F17FB9B001BC217 /* CustomizeScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA12D01F17FB9B001BC217 /* CustomizeScheduleViewController.swift */; };
 		05EF13AB1E9EC8AF0076F9CD /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EF13AA1E9EC8AF0076F9CD /* CalendarViewController.swift */; };
 		05EF13AD1E9ED7880076F9CD /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EF13AC1E9ED7880076F9CD /* ScheduleTableViewCell.swift */; };
 		05EF13AF1E9EDC4E0076F9CD /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EF13AE1E9EDC4E0076F9CD /* ScheduleTableViewController.swift */; };
@@ -77,6 +78,7 @@
 		059AB4551E22CEE3008CE585 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05A3800C1EB03C4000D1D399 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../Downloads/Parse-iOS (1)/Bolts.framework"; sourceTree = "<group>"; };
 		05A3800D1EB03C4000D1D399 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../Downloads/Parse-iOS (1)/Parse.framework"; sourceTree = "<group>"; };
+		05EA12D01F17FB9B001BC217 /* CustomizeScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomizeScheduleViewController.swift; path = ../CustomizeScheduleViewController.swift; sourceTree = "<group>"; };
 		05EF13AA1E9EC8AF0076F9CD /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		05EF13AC1E9ED7880076F9CD /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		05EF13AE1E9EDC4E0076F9CD /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		059AB42F1E22CEE3008CE585 /* FLHS_App */ = {
 			isa = PBXGroup;
 			children = (
+				05EA12D01F17FB9B001BC217 /* CustomizeScheduleViewController.swift */,
 				D37024DB1EA167160057D5F7 /* AnnouncementViewController.swift */,
 				D37024DD1EA169BF0057D5F7 /* LunchMenuViewController.swift */,
 				059AB4301E22CEE3008CE585 /* AppDelegate.swift */,
@@ -334,6 +337,7 @@
 				D37024DE1EA169BF0057D5F7 /* LunchMenuViewController.swift in Sources */,
 				05EF13B11E9EDF1D0076F9CD /* Course.swift in Sources */,
 				0578A2F91F15CCF2001608C0 /* DatePickerViewController.swift in Sources */,
+				05EA12D11F17FB9B001BC217 /* CustomizeScheduleViewController.swift in Sources */,
 				D37024DC1EA167160057D5F7 /* AnnouncementViewController.swift in Sources */,
 				057D50961F16DAE700317DBE /* Day.swift in Sources */,
 				05EF13AB1E9EC8AF0076F9CD /* CalendarViewController.swift in Sources */,

@@ -55,6 +55,7 @@ class ScheduleTableViewController: UITableViewController {
     
     
     var dayType = "A" //determines day type that we are trying to display today.
+    var dayLetter = "A"
     var courses = [Course]() //this is the master list that is displayed in the table view
     var customDays : [Day]? //days with course names replaced with personal course names ("French" instead of "Course 1")
     var queryDate : String!
@@ -122,6 +123,21 @@ class ScheduleTableViewController: UITableViewController {
         
         
         // Configure the cell...
+        //Find custom course name (Ex:"Course 1" -> "French")
+        //Begin by getting course number - should be last character of name
+        let index = course.name.index(course.name.endIndex, offsetBy: -1)
+        let shouldBeNumberString = course.name.substring(from: index)
+        //Try to convert this string shouldBeNumber into a number.
+        let shouldBeNumber = Int(shouldBeNumberString)
+        //Check if character is a number
+        if (shouldBeNumber != nil) {
+            //If this character is a number, then we can assume it is a replacable course!
+            //Use number as index for days array (since index is 0-based, subtract 1)
+            course.name = (customDays?[ScheduleTableViewController.translateDayToIndex(dayString: self.dayLetter)].courses[shouldBeNumber! - 1])!
+            print(shouldBeNumber! - 1)
+        } else {
+            //It wasn't a number. Let's leave it be. It's not a generic course (Ex: "Assembly")
+        }
         cell.courseName.text = course.name
         cell.courseTime.text = course.time
         return cell
@@ -307,6 +323,10 @@ class ScheduleTableViewController: UITableViewController {
                     //Get and set the day code
                     let strDayIndex = dates[index].index((dates[index].startIndex), offsetBy: 6)
                      self.dayType = dates[index].substring(from: strDayIndex)
+                    //TODO: Get letter: used for finding what custom courses we should use...
+                    //Always the last characer.
+                    let lastCharIndex = dates[index].index(dates[index].endIndex, offsetBy: -1)
+                    self.dayLetter = dates[index].substring(from: lastCharIndex)
                     //Get lunch
                     let lunch : String = self.getLunch().lowercased()
                     //Load the courses.
@@ -323,7 +343,6 @@ class ScheduleTableViewController: UITableViewController {
     }
     
     private func getLunch() -> String {
-        //TODO: Determine method for getting Lunches...
         if (lunchType != nil) {
             //Preselected. Let's follow that.
             return lunchType

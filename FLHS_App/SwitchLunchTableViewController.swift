@@ -85,9 +85,9 @@ class SwitchLunchTableViewController: UITableViewController  {
             //Save the updated days array to disk.
             let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(days, toFile: Day.ArchiveURL.path)
             if isSuccessfulSave {
-                print("Successfully saved default schedule data")
+                print("Successfully saved schedule data")
             } else {
-                print("Unsuccessfully saved default schedule data")
+                print("Unsuccessfully saved schedule data")
             }
 
         }
