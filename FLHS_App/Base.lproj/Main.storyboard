@@ -253,8 +253,7 @@
                             </barButtonItem>
                             <barButtonItem title="Early" id="b1W-6F-SCz">
                                 <connections>
-                                    <action selector="switchLunch:" destination="zuK-I4-AfI" id="4KI-lH-ahC"/>
-                                    <segue destination="oXr-05-3b8" kind="show" id="T1P-LG-wbJ"/>
+                                    <action selector="switchLunch:" destination="zuK-I4-AfI" id="Cf5-8W-iT4"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -262,7 +261,8 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="DateButton" destination="l9f-R3-Mw4" id="lbB-ra-zPn"/>
-                        <outlet property="SwitchLunchButton" destination="b1W-6F-SCz" id="qej-pz-AeP"/>
+                        <outlet property="SwitchLunchButton" destination="b1W-6F-SCz" id="a5c-cV-WDS"/>
+                        <segue destination="oXr-05-3b8" kind="show" identifier="switchLunchSegue" id="wZN-Pl-jrZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPG-PI-ROb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -751,6 +751,6 @@
         <image name="scheduleIcon" width="150" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="btG-YO-YSA"/>
+        <segue reference="1Ql-ge-xiW"/>
     </inferredMetricsTieBreakers>
 </document>

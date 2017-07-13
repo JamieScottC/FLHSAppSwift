@@ -13,6 +13,7 @@ import Foundation
 class ScheduleTableViewController: UITableViewController {
     
     @IBOutlet var DateButton: UIButton!
+
     @IBOutlet var SwitchLunchButton: UIBarButtonItem!
     
     let twoHourDelay5EarlyLunchTimes : [String] = ["9:45 - 10:10", "10:15 - 10:40", "10:45 - 11:10", "11:15 - 11:45", "11:50 - 12:15", "12:20 - 12:45", "12:50 - 1:15", "1:20 - 1:45", "1:50 - 2:15"]
@@ -53,8 +54,9 @@ class ScheduleTableViewController: UITableViewController {
     let day5Lunch3Times : [String] = ["7:45 - 8:25", "8:30 - 9:10", "9:15 - 9:55", "10:00 - 10:40", "10:45 - 11:25", "11:30 - 12:00", "12:05 - 12:45", "12:50 - 1:30", "1:35 - 2:15"]
     
     
-    var dayType = "A"
-    var courses = [Course]()
+    var dayType = "A" //determines day type that we are trying to display today.
+    var courses = [Course]() //this is the master list that is displayed in the table view
+    var customDays : [Day]? //days with course names replaced with personal course names ("French" instead of "Course 1")
     var queryDate : String!
     var lunchType : String!
     override func viewDidLoad() {
@@ -69,8 +71,19 @@ class ScheduleTableViewController: UITableViewController {
             formatter.dateFormat = "MM/dd"
             queryDate = formatter.string(from: date)
         }
+        
         //Set the button text to the query date. This will orient the user as to which day they are viewing.
         DateButton.setTitle(queryDate, for: .normal)
+        //Load custom schedule data
+        customDays = ScheduleTableViewController.loadDays()
+        //If loading the days was unsuccessful, generate the base plate (probably first time user ran schedule portion of app)
+        if (customDays == nil) {
+            print("Trying to generate default course settings...")
+            customDays = generateDays()
+        }
+        
+        
+        
         //Find Day Type we are trying to load schedule for
         getDay(queryDate: queryDate)
         
@@ -150,15 +163,21 @@ class ScheduleTableViewController: UITableViewController {
     }
     */
 
-    /*
+   
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "switchLunchSegue" {
+            let VC = segue.destination as! SwitchLunchTableViewController
+            let dayType =  sender as! String
+            VC.dayType = dayType
+        }
     }
-    */
+ 
     
     private func loadCourses(lunchType : String) {
         if dayType == "D" || dayType == "4" {
@@ -269,7 +288,6 @@ class ScheduleTableViewController: UITableViewController {
                 courses.append(course)
             }
         }
-        
     }
     
     private func getDay(queryDate: String) {
@@ -297,7 +315,6 @@ class ScheduleTableViewController: UITableViewController {
                      self.tableView.reloadData()
                 }
             }
-        
         }
         
         //TODO: Return nil and handle no day found.
@@ -310,6 +327,15 @@ class ScheduleTableViewController: UITableViewController {
         if (lunchType != nil) {
             //Preselected. Let's follow that.
             return lunchType
+        } else if (customDays != nil) {
+            //Use saved setting on disk
+            //Get corresponding index for day type
+            let index = ScheduleTableViewController.translateDayToIndex(dayString: dayType)
+            if (index != -1) {
+                //A corresponding day was found.
+                return customDays![index].lunchType
+            }
+            
         }
         return "early"
     }
@@ -325,14 +351,80 @@ class ScheduleTableViewController: UITableViewController {
         }
     }
     
+
     private func loadQueryDate() -> UserScheduleData? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: UserScheduleData.ArchiveURL.path) as? UserScheduleData
     }
     
-    
     @IBAction func switchLunch(_ sender: Any) {
+        performSegue(withIdentifier: "switchLunchSegue", sender: dayType)
         
     }
     
+    public static func loadDays () -> [Day]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Day.ArchiveURL.path) as? [Day]
+    }
+    
+    private func generateDays () -> [Day] {
+        //Return a default array of days to serve as baseplate for user customization.
+        var days : [Day] = []
+        var i : Int
+        //0 is A, 1 is B, 5 is 1, 6 is 2, 7 is 3....
+        for i in 0 ... 9 {
+            days.append(generateDay())
+        }
+        //Save this array of days to disk
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(days, toFile: Day.ArchiveURL.path)
+        if isSuccessfulSave {
+            print("Successfully saved default schedule data")
+        } else {
+            print("Unsuccessfully saved default schedule data")
+        }
+        return days
+    }
+
+private func generateDay() -> Day {
+    //Generate string array of default course names ... Ex: "Course 1", "Course 2", etc.
+    var courses : [String] = []
+    var i : Int
+    for i in 1 ... 8 {
+        courses.append("Course " + String(i))
+    }
+    //Generate default lunch type: Middle
+    let lunchType : String = "Middle"
+    return Day(courses: courses, lunchType: lunchType)
+}
+
+    
+    //custom days are stored in array. this function simplifies the process of corresponding the index to the correct day.
+    public static func translateDayToIndex(dayString: String) -> Int {
+        switch (dayString) {
+        case "A":
+            return 0
+        case "B":
+            return 1
+        case "C":
+            return 2
+        case "D":
+            return 3
+        case "E":
+            return 4
+        case "1":
+            return 5
+        case "2":
+            return 6
+        case "3":
+            return 7
+        case "4":
+            return 8
+        case "5":
+            return 9
+        default:
+            //This shouldn't happen
+            print("Index did not fit range of A-E or 1-5. Returned -1")
+            return -1
+        }
+    }
+
     
 }

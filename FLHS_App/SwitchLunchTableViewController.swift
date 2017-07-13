@@ -11,6 +11,7 @@ import UIKit
 class SwitchLunchTableViewController: UITableViewController  {
 
     var items : [String] = ["Early", "Middle", "Late"]
+    var dayType : String!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -57,6 +58,7 @@ class SwitchLunchTableViewController: UITableViewController  {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print ("Item selected!" + self.items[indexPath.row])
+        saveLunchType(lunchType: self.items[indexPath.row])
         //Display schedule with updated lunch selection.
         performSegue(withIdentifier: "DisplayScheduleLunchSegue", sender: self.items[indexPath.row])
 
@@ -72,7 +74,30 @@ class SwitchLunchTableViewController: UITableViewController  {
    
     //MARK: Persisting lunch data.
     //TODO: Work on persisting lunch data.
+    private func saveLunchType(lunchType: String) {
+        //Load days
+        let days = ScheduleTableViewController.loadDays()
+        //Find index for day code
+        let index = ScheduleTableViewController.translateDayToIndex(dayString: dayType)
+        if index != -1 { //The day type has a corresponding index
+            //Update lunch type
+            days?[index].lunchType = lunchType
+            //Save the updated days array to disk.
+            let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(days, toFile: Day.ArchiveURL.path)
+            if isSuccessfulSave {
+                print("Successfully saved default schedule data")
+            } else {
+                print("Unsuccessfully saved default schedule data")
+            }
 
+        }
+        
+    }
+    
+    
+    private func loadQueryDate(dayType: String) -> UserScheduleData? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: UserScheduleData.ArchiveURL.path) as? UserScheduleData
+    }
     
     
     }
