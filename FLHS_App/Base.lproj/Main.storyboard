@@ -200,7 +200,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="veX-FO-y0u" id="P7K-hy-wnx">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abg-3k-u5q">
@@ -294,7 +294,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5p-3Z-8G1">
-                                <rect key="frame" x="169" y="536" width="37" height="30"/>
+                                <rect key="frame" x="169" y="580" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="saveQueryDate:" destination="Qra-1b-xtQ" eventType="touchUpInside" id="77G-AF-wMa"/>
@@ -373,7 +373,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="iOC-qB-zyG">
-                                <rect key="frame" x="16" y="30" width="343" height="593"/>
+                                <rect key="frame" x="16" y="30" width="343" height="637"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="RMv-CL-06h">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="31"/>
@@ -390,11 +390,11 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BiE-mM-suh">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BiE-mM-suh">
                                                 <rect key="frame" x="228.5" y="0.0" width="114.5" height="31"/>
                                                 <state key="normal" title="Alternate"/>
                                                 <connections>
-                                                    <segue destination="fke-DE-2la" kind="show" id="vfV-Dn-dFy"/>
+                                                    <action selector="openAltWindow:" destination="Xgm-21-ezi" eventType="touchUpInside" id="Nl3-p3-Wg0"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -414,9 +414,12 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2a-GD-hBK">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2a-GD-hBK">
                                                 <rect key="frame" x="228.5" y="0.0" width="114.5" height="31"/>
                                                 <state key="normal" title="Alternate"/>
+                                                <connections>
+                                                    <action selector="openAltWindow:" destination="Xgm-21-ezi" eventType="primaryActionTriggered" id="nOw-tq-EHK"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -435,9 +438,12 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAV-49-iGx">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAV-49-iGx">
                                                 <rect key="frame" x="228.5" y="0.0" width="114.5" height="30"/>
                                                 <state key="normal" title="Alternate"/>
+                                                <connections>
+                                                    <action selector="openAltWindow:" destination="Xgm-21-ezi" eventType="primaryActionTriggered" id="i84-ln-ygd"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -456,9 +462,12 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bue-Sr-MRI">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bue-Sr-MRI">
                                                 <rect key="frame" x="228.5" y="0.0" width="114.5" height="31"/>
                                                 <state key="normal" title="Alternate"/>
+                                                <connections>
+                                                    <action selector="openAltWindow:" destination="Xgm-21-ezi" eventType="primaryActionTriggered" id="oXX-Hy-Blf"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -477,9 +486,12 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5c-gK-0Fe">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5c-gK-0Fe">
                                                 <rect key="frame" x="228.5" y="0.0" width="114.5" height="30"/>
                                                 <state key="normal" title="Alternate"/>
+                                                <connections>
+                                                    <action selector="openAltWindow:" destination="Xgm-21-ezi" eventType="primaryActionTriggered" id="2c6-ZM-1DC"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -498,9 +510,14 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77b-p8-sxr">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77b-p8-sxr">
                                                 <rect key="frame" x="228.5" y="0.0" width="114.5" height="31"/>
-                                                <state key="normal" title="Alternate"/>
+                                                <state key="normal" title="Alternate">
+                                                    <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="openAltWindow:" destination="Xgm-21-ezi" eventType="primaryActionTriggered" id="Nnw-Ko-W0C"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -519,9 +536,12 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0i-4B-2dB">
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0i-4B-2dB">
                                                 <rect key="frame" x="228.5" y="0.0" width="114.5" height="31"/>
                                                 <state key="normal" title="Alternate"/>
+                                                <connections>
+                                                    <action selector="openAltWindow:" destination="Xgm-21-ezi" eventType="primaryActionTriggered" id="AUr-jw-rKh"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -540,14 +560,17 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HG-qv-eC5">
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HG-qv-eC5">
                                                 <rect key="frame" x="228.5" y="0.0" width="114.5" height="30"/>
                                                 <state key="normal" title="Alternate"/>
+                                                <connections>
+                                                    <action selector="openAltWindow:" destination="Xgm-21-ezi" eventType="primaryActionTriggered" id="hpG-8u-cb7"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nEZ-Hv-c8y">
-                                        <rect key="frame" x="0.0" y="421" width="343" height="172"/>
+                                        <rect key="frame" x="0.0" y="421" width="343" height="216"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNf-wK-ozo">
                                                 <rect key="frame" x="120" y="49" width="102" height="30"/>
@@ -582,6 +605,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="alt1" destination="BiE-mM-suh" id="6ra-Zf-w2B"/>
+                        <outlet property="alt2" destination="d2a-GD-hBK" id="UXE-25-AZG"/>
+                        <outlet property="alt3" destination="VAV-49-iGx" id="jez-II-kYS"/>
+                        <outlet property="alt4" destination="Bue-Sr-MRI" id="Vrb-9V-QgG"/>
+                        <outlet property="alt5" destination="H5c-gK-0Fe" id="ZOw-hv-RCy"/>
+                        <outlet property="alt6" destination="77b-p8-sxr" id="IHX-Fr-sUT"/>
+                        <outlet property="alt7" destination="h0i-4B-2dB" id="9Cs-4J-z02"/>
+                        <outlet property="alt8" destination="7HG-qv-eC5" id="0th-Y4-jly"/>
                         <outlet property="course1Field" destination="OA6-G9-4sL" id="KKk-ry-pg2"/>
                         <outlet property="course2Field" destination="8nn-HB-MCE" id="pc8-Xe-d17"/>
                         <outlet property="course3Field" destination="Voj-Se-eLC" id="ejW-4h-83v"/>
@@ -590,95 +621,107 @@
                         <outlet property="course6Field" destination="P81-rB-c8X" id="0KT-YQ-2Na"/>
                         <outlet property="course7Field" destination="hhP-TJ-gG4" id="emD-7i-2b2"/>
                         <outlet property="course8Field" destination="NQb-zC-Vul" id="Te9-pp-n4n"/>
+                        <segue destination="8yl-VQ-1b4" kind="show" identifier="showAlternate" id="a4j-eH-zsC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dF-BK-QI4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3535.1999999999998" y="462.8185907046477"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="yaF-el-yAx">
+        <!--Alternate Courses View Controller-->
+        <scene sceneID="KUM-Rw-5aw">
             <objects>
-                <viewController id="fke-DE-2la" sceneMemberID="viewController">
+                <viewController id="8yl-VQ-1b4" customClass="AlternateCoursesViewController" customModule="FLHS_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9CJ-yF-Ye9"/>
-                        <viewControllerLayoutGuide type="bottom" id="dCt-JQ-xY6"/>
+                        <viewControllerLayoutGuide type="top" id="KuO-LZ-VQl"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tv3-aK-TGO"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mKH-pA-J4H">
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="X0f-4s-qBh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bzg-b4-kdv">
-                                <rect key="frame" x="16" y="20" width="343" height="603"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jz8-GW-ggo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write the name of each alternating course, then toggle which days you have that alternating course." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Y9-hF-82A">
-                                        <rect key="frame" x="7" y="0.0" width="329.5" height="61"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DbC-UY-EKb">
-                                        <rect key="frame" x="36.5" y="78" width="270" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VYF-Kg-Vlc">
+                                        <rect key="frame" x="16" y="20" width="359" height="91"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alternating Course 1:" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFH-lC-kNy">
-                                                <rect key="frame" x="0.0" y="0.0" width="135" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write the name of each alternating course, then toggle which days you have that alternating course." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rf4-KI-a4g">
+                                                <rect key="frame" x="15" y="0.0" width="329.5" height="61"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6wc-9n-s2f">
-                                                <rect key="frame" x="135" y="0.0" width="135" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yyL-Ns-LUC">
+                                                <rect key="frame" x="45" y="61" width="269" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alternating Course 1:" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fD7-b2-K3B">
+                                                        <rect key="frame" x="0.0" y="0.0" width="135" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="135" id="ZxW-xk-Hrf"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0yu-nd-xRk">
+                                                        <rect key="frame" x="135" y="0.0" width="134" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="yyL-Ns-LUC" firstAttribute="leading" secondItem="VYF-Kg-Vlc" secondAttribute="leading" constant="45" id="jnt-YM-1n6"/>
+                                        </constraints>
                                     </stackView>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VSH-8O-HYH">
-                                        <rect key="frame" x="121" y="124.5" width="101" height="29"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dNl-wz-bIr">
+                                        <rect key="frame" x="147" y="119" width="101" height="29"/>
                                         <segments>
                                             <segment title="Day A"/>
                                             <segment title="Day 1"/>
                                         </segments>
                                     </segmentedControl>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dRP-8J-NnT">
-                                        <rect key="frame" x="121" y="169.5" width="101" height="29"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="79w-HQ-cAe">
+                                        <rect key="frame" x="147" y="155" width="101" height="29"/>
                                         <segments>
                                             <segment title="Day B"/>
                                             <segment title="Day 2"/>
                                         </segments>
                                     </segmentedControl>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MqQ-Kh-LD7">
-                                        <rect key="frame" x="120" y="214.5" width="103" height="29"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1PQ-WJ-5jO">
+                                        <rect key="frame" x="146" y="191" width="103" height="29"/>
                                         <segments>
                                             <segment title="Day C"/>
                                             <segment title="Day 3"/>
                                         </segments>
                                     </segmentedControl>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8YC-ok-IAy">
-                                        <rect key="frame" x="120" y="259" width="103" height="29"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tMy-l1-hyK">
+                                        <rect key="frame" x="146" y="227" width="103" height="29"/>
                                         <segments>
                                             <segment title="Day D"/>
                                             <segment title="Day 4"/>
                                         </segments>
                                     </segmentedControl>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UuN-VC-8ot">
-                                        <rect key="frame" x="122" y="304" width="99" height="29"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PqK-xu-ugM">
+                                        <rect key="frame" x="147" y="263" width="99" height="29"/>
                                         <segments>
                                             <segment title="Day E"/>
                                             <segment title="Day 5"/>
                                         </segments>
                                     </segmentedControl>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3E-H4-o3j">
-                                        <rect key="frame" x="34.5" y="349" width="274" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJy-Bb-NI4">
+                                        <rect key="frame" x="57" y="325" width="274" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alternating Course 2:" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kus-aI-0eH">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alternating Course 2:" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uM-Rz-pKP">
                                                 <rect key="frame" x="0.0" y="0.0" width="137" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dz2-PZ-q5b">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rWw-zA-Oo8">
                                                 <rect key="frame" x="137" y="0.0" width="137" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -686,57 +729,112 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="u6b-CI-HNZ">
-                                        <rect key="frame" x="121" y="395.5" width="101" height="29"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9eL-yG-Rem">
+                                        <rect key="frame" x="145" y="363" width="101" height="29"/>
                                         <segments>
                                             <segment title="Day A"/>
                                             <segment title="Day 1"/>
                                         </segments>
                                     </segmentedControl>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VXe-Tb-B2T">
-                                        <rect key="frame" x="121" y="440.5" width="101" height="29"/>
-                                        <segments>
-                                            <segment title="Day B"/>
-                                            <segment title="Day 2"/>
-                                        </segments>
-                                    </segmentedControl>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ji8-Ig-3LQ">
-                                        <rect key="frame" x="120" y="485.5" width="103" height="29"/>
-                                        <segments>
-                                            <segment title="Day C"/>
-                                            <segment title="Day 3"/>
-                                        </segments>
-                                    </segmentedControl>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PPK-HK-odb">
-                                        <rect key="frame" x="120" y="530" width="103" height="29"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gTO-3Q-Uen">
+                                        <rect key="frame" x="142" y="471" width="103" height="29"/>
                                         <segments>
                                             <segment title="Day D"/>
                                             <segment title="Day 4"/>
                                         </segments>
                                     </segmentedControl>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="O51-XS-HOo">
-                                        <rect key="frame" x="122" y="575" width="99" height="29"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8zV-aX-28R">
+                                        <rect key="frame" x="144" y="399" width="101" height="29"/>
+                                        <segments>
+                                            <segment title="Day B"/>
+                                            <segment title="Day 2"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pFv-GP-Ghb">
+                                        <rect key="frame" x="142" y="435" width="103" height="29"/>
+                                        <segments>
+                                            <segment title="Day C"/>
+                                            <segment title="Day 3"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aUH-Lf-h9u">
+                                        <rect key="frame" x="142" y="507" width="103" height="29"/>
                                         <segments>
                                             <segment title="Day E"/>
                                             <segment title="Day 5"/>
                                         </segments>
                                     </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03l-1I-07a">
+                                        <rect key="frame" x="170" y="543" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="aAJ-0A-7E7"/>
+                                        </constraints>
+                                        <state key="normal" title="Done"/>
+                                        <connections>
+                                            <action selector="saveAlternatingCourses:" destination="8yl-VQ-1b4" eventType="touchUpInside" id="de7-5I-iOn"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="03l-1I-07a" firstAttribute="centerX" secondItem="aUH-Lf-h9u" secondAttribute="centerX" id="1BS-tc-pCE"/>
+                                    <constraint firstItem="pFv-GP-Ghb" firstAttribute="leading" secondItem="aUH-Lf-h9u" secondAttribute="leading" id="2tM-52-AXp"/>
+                                    <constraint firstItem="03l-1I-07a" firstAttribute="centerX" secondItem="gTO-3Q-Uen" secondAttribute="centerX" id="5u7-0l-00j"/>
+                                    <constraint firstItem="VYF-Kg-Vlc" firstAttribute="centerX" secondItem="gJy-Bb-NI4" secondAttribute="centerX" constant="1.5" id="6sb-aT-fhm"/>
+                                    <constraint firstItem="9eL-yG-Rem" firstAttribute="top" secondItem="gJy-Bb-NI4" secondAttribute="bottom" constant="8" symbolic="YES" id="Bc1-g0-mul"/>
+                                    <constraint firstItem="PqK-xu-ugM" firstAttribute="leading" secondItem="79w-HQ-cAe" secondAttribute="leading" id="BxD-zu-PYY"/>
+                                    <constraint firstItem="VYF-Kg-Vlc" firstAttribute="centerX" secondItem="Jz8-GW-ggo" secondAttribute="centerX" constant="8" id="CQ3-Sj-GyV"/>
+                                    <constraint firstItem="PqK-xu-ugM" firstAttribute="leading" secondItem="dNl-wz-bIr" secondAttribute="leading" id="D8y-wf-pa8"/>
+                                    <constraint firstItem="VYF-Kg-Vlc" firstAttribute="top" secondItem="Jz8-GW-ggo" secondAttribute="top" constant="20" id="Dz2-P5-yNP"/>
+                                    <constraint firstItem="pFv-GP-Ghb" firstAttribute="top" secondItem="8zV-aX-28R" secondAttribute="bottom" constant="8" symbolic="YES" id="Gkj-Si-DWb"/>
+                                    <constraint firstItem="VYF-Kg-Vlc" firstAttribute="centerX" secondItem="8zV-aX-28R" secondAttribute="centerX" constant="1" id="Hv1-G7-Nww"/>
+                                    <constraint firstItem="gJy-Bb-NI4" firstAttribute="top" secondItem="PqK-xu-ugM" secondAttribute="bottom" constant="34" id="MeB-te-Vr8"/>
+                                    <constraint firstItem="79w-HQ-cAe" firstAttribute="centerX" secondItem="1PQ-WJ-5jO" secondAttribute="centerX" id="QQZ-VF-iDf"/>
+                                    <constraint firstItem="VYF-Kg-Vlc" firstAttribute="leading" secondItem="Jz8-GW-ggo" secondAttribute="leadingMargin" constant="8" id="RsB-1O-CaG"/>
+                                    <constraint firstAttribute="bottom" secondItem="03l-1I-07a" secondAttribute="bottom" constant="127" id="Sae-Ql-7Gf"/>
+                                    <constraint firstItem="1PQ-WJ-5jO" firstAttribute="top" secondItem="79w-HQ-cAe" secondAttribute="bottom" constant="8" symbolic="YES" id="WPA-lh-Y9P"/>
+                                    <constraint firstItem="VYF-Kg-Vlc" firstAttribute="centerX" secondItem="pFv-GP-Ghb" secondAttribute="centerX" constant="2" id="Wi4-DX-lYM"/>
+                                    <constraint firstItem="gTO-3Q-Uen" firstAttribute="top" secondItem="pFv-GP-Ghb" secondAttribute="bottom" constant="8" symbolic="YES" id="ctI-58-AVe"/>
+                                    <constraint firstAttribute="bottom" secondItem="pFv-GP-Ghb" secondAttribute="bottom" constant="237" id="ge4-2l-Q0m"/>
+                                    <constraint firstItem="79w-HQ-cAe" firstAttribute="top" secondItem="dNl-wz-bIr" secondAttribute="bottom" constant="8" symbolic="YES" id="i3r-hI-qSG"/>
+                                    <constraint firstItem="79w-HQ-cAe" firstAttribute="top" secondItem="Jz8-GW-ggo" secondAttribute="top" constant="155" id="iwB-Mk-b3t"/>
+                                    <constraint firstItem="PqK-xu-ugM" firstAttribute="top" secondItem="Jz8-GW-ggo" secondAttribute="top" constant="263" id="m75-Bd-foT"/>
+                                    <constraint firstItem="VYF-Kg-Vlc" firstAttribute="centerX" secondItem="gTO-3Q-Uen" secondAttribute="centerX" constant="2" id="pzu-S2-uFL"/>
+                                    <constraint firstItem="03l-1I-07a" firstAttribute="top" secondItem="aUH-Lf-h9u" secondAttribute="bottom" constant="8" symbolic="YES" id="qxC-Qn-W4T"/>
+                                    <constraint firstItem="79w-HQ-cAe" firstAttribute="centerX" secondItem="tMy-l1-hyK" secondAttribute="centerX" id="rL9-Oa-TQf"/>
+                                    <constraint firstItem="VYF-Kg-Vlc" firstAttribute="centerX" secondItem="PqK-xu-ugM" secondAttribute="centerX" constant="-1" id="reO-og-2m4"/>
+                                    <constraint firstItem="VYF-Kg-Vlc" firstAttribute="centerX" secondItem="9eL-yG-Rem" secondAttribute="centerX" id="sCE-iW-Rwx"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="VYF-Kg-Vlc" secondAttribute="trailing" constant="-8" id="t5G-qZ-7N8"/>
+                                    <constraint firstItem="PqK-xu-ugM" firstAttribute="top" secondItem="tMy-l1-hyK" secondAttribute="bottom" constant="8" symbolic="YES" id="zLF-Hr-cYn"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dCt-JQ-xY6" firstAttribute="top" secondItem="Bzg-b4-kdv" secondAttribute="bottom" id="8sE-Dc-L4O"/>
-                            <constraint firstItem="Bzg-b4-kdv" firstAttribute="top" secondItem="9CJ-yF-Ye9" secondAttribute="bottom" id="FMq-tP-CXT"/>
-                            <constraint firstItem="Bzg-b4-kdv" firstAttribute="centerX" secondItem="mKH-pA-J4H" secondAttribute="centerX" id="l1C-Jl-EOR"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Bzg-b4-kdv" secondAttribute="trailing" id="x4g-oS-jaH"/>
-                            <constraint firstItem="Bzg-b4-kdv" firstAttribute="leading" secondItem="mKH-pA-J4H" secondAttribute="leadingMargin" id="yA7-g3-4go"/>
+                            <constraint firstItem="Jz8-GW-ggo" firstAttribute="top" secondItem="X0f-4s-qBh" secondAttribute="top" id="I1I-wA-XuR"/>
+                            <constraint firstItem="Jz8-GW-ggo" firstAttribute="centerX" secondItem="X0f-4s-qBh" secondAttribute="centerX" id="WwI-Oq-fyM"/>
+                            <constraint firstItem="Jz8-GW-ggo" firstAttribute="centerY" secondItem="X0f-4s-qBh" secondAttribute="centerY" constant="16.5" id="a8M-61-kqH"/>
+                            <constraint firstAttribute="trailing" secondItem="Jz8-GW-ggo" secondAttribute="trailing" id="i41-yN-kiO"/>
+                            <constraint firstItem="Jz8-GW-ggo" firstAttribute="width" secondItem="X0f-4s-qBh" secondAttribute="width" id="ibY-to-4i3"/>
                         </constraints>
-                    </view>
+                    </scrollView>
+                    <connections>
+                        <outlet property="alt1day1" destination="9eL-yG-Rem" id="qDj-PI-PK2"/>
+                        <outlet property="alt1day3" destination="1PQ-WJ-5jO" id="y7Z-yj-acM"/>
+                        <outlet property="alt1day4" destination="tMy-l1-hyK" id="i4g-0s-0ca"/>
+                        <outlet property="alt1day5" destination="PqK-xu-ugM" id="6P0-x0-TZc"/>
+                        <outlet property="alt2day1" destination="9eL-yG-Rem" id="rOd-8a-FE7"/>
+                        <outlet property="alt2day2" destination="8zV-aX-28R" id="T9R-jm-tdR"/>
+                        <outlet property="alt2day3" destination="pFv-GP-Ghb" id="g5V-zy-qXJ"/>
+                        <outlet property="alt2day4" destination="gTO-3Q-Uen" id="BQb-6N-9py"/>
+                        <outlet property="alt2day5" destination="aUH-Lf-h9u" id="yg5-ry-PY4"/>
+                        <outlet property="altday2" destination="79w-HQ-cAe" id="BsR-lj-rKZ"/>
+                        <outlet property="firstCourseField" destination="0yu-nd-xRk" id="Vab-Lz-3iu"/>
+                        <outlet property="secondCourseField" destination="rWw-zA-Oo8" id="25I-a6-FNe"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XOB-Qa-547" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yay-O2-8lN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4344.8000000000002" y="466.41679160419795"/>
+            <point key="canvasLocation" x="5092" y="326.98650674662673"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="t7o-Sf-XjR">

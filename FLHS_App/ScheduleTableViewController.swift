@@ -134,7 +134,6 @@ class ScheduleTableViewController: UITableViewController {
             //If this character is a number, then we can assume it is a replacable course!
             //Use number as index for days array (since index is 0-based, subtract 1)
             course.name = (customDays?[ScheduleTableViewController.translateDayToIndex(dayString: self.dayLetter)].courses[shouldBeNumber! - 1])!
-            print(shouldBeNumber! - 1)
         } else {
             //It wasn't a number. Let's leave it be. It's not a generic course (Ex: "Assembly")
         }
@@ -308,9 +307,6 @@ class ScheduleTableViewController: UITableViewController {
     
     private func getDay(queryDate: String) {
         //TODO: Let querydate be something other than 'currentDate'
-        //Retrives date from phone
-        
-        
         //Get Parse Config Data
         PFConfig.getInBackground { (config, error) in
             let dates = config?["WhatDay"] as! Array<String>
@@ -323,7 +319,7 @@ class ScheduleTableViewController: UITableViewController {
                     //Get and set the day code
                     let strDayIndex = dates[index].index((dates[index].startIndex), offsetBy: 6)
                      self.dayType = dates[index].substring(from: strDayIndex)
-                    //TODO: Get letter: used for finding what custom courses we should use...
+                    //Get letter: used for finding what custom courses we should use...
                     //Always the last characer.
                     let lastCharIndex = dates[index].index(dates[index].endIndex, offsetBy: -1)
                     self.dayLetter = dates[index].substring(from: lastCharIndex)
@@ -387,7 +383,6 @@ class ScheduleTableViewController: UITableViewController {
     private func generateDays () -> [Day] {
         //Return a default array of days to serve as baseplate for user customization.
         var days : [Day] = []
-        var i : Int
         //0 is A, 1 is B, 5 is 1, 6 is 2, 7 is 3....
         for i in 0 ... 9 {
             days.append(generateDay())
