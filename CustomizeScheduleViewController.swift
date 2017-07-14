@@ -49,6 +49,8 @@ class CustomizeScheduleViewController: UIViewController {
                 //If this course alternates, change colors to make it look "toggled"
                 altButtons[i]?.backgroundColor = UIColor.red
                 altButtons[i]?.setTitleColor(UIColor.white, for: .normal)
+                //Hide the field
+                courseFields[i]?.isHidden = true
             }
         }
         
@@ -58,7 +60,14 @@ class CustomizeScheduleViewController: UIViewController {
     }
 
     func alternates (index: Int) -> Bool {
-        
+        //Go through each day and see if course names differ
+        let originalCourseName = days[0].courses[index]
+        for i in 0 ..< days.count {
+            if originalCourseName != days[i].courses[index] {
+                //This course DOES alternate!
+                return true
+            }
+        }
         return false
     }
     
@@ -119,6 +128,21 @@ class CustomizeScheduleViewController: UIViewController {
             //Not toggled yet, so let's open a window!
             //button.tag has number that corresponds with course number (i.e. 1 for "Course 1")
             performSegue(withIdentifier: "showAlternate", sender: (button.tag - 1))
+        } else {
+            //It's already been toggled! So, let's untoggle it
+            button.backgroundColor = nil
+            button.setTitleColor(UIColor.blue, for: .normal)
+            //Now we need to show the text field. We will have to figure out the index by checking what the button's index is
+            for i in 0..<altButtons.count {
+                if altButtons[i] == button {
+                    //This is the correct index
+                    //Show field again...
+                    courseFields[i]?.isHidden = false
+                    //Now let's quit this loop
+                    break
+                }
+                
+            }
         }
     }
 }

@@ -130,7 +130,9 @@ class AlternateCoursesViewController: UIViewController {
         } else {
             print("Unsuccessfully saved schedule data")
         }
-        //TODO: Revert back to customized schedule
+        // Revert back to customized schedule (hopefully without segue)?
+        navigationController?.popViewController(animated: true)
+
     }
 
 }

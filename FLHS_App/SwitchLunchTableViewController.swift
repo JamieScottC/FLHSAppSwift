@@ -60,7 +60,9 @@ class SwitchLunchTableViewController: UITableViewController  {
         print ("Item selected!" + self.items[indexPath.row])
         saveLunchType(lunchType: self.items[indexPath.row])
         //Display schedule with updated lunch selection.
-        performSegue(withIdentifier: "DisplayScheduleLunchSegue", sender: self.items[indexPath.row])
+        navigationController?.popViewController(animated: true)
+
+        //performSegue(withIdentifier: "DisplayScheduleLunchSegue", sender: self.items[indexPath.row])
 
     }
     
