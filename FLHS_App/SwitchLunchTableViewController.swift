@@ -49,7 +49,6 @@ class SwitchLunchTableViewController: UITableViewController  {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
-        
         cell.textLabel?.text = self.items[indexPath.row]
         
         return cell
@@ -57,11 +56,17 @@ class SwitchLunchTableViewController: UITableViewController  {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print ("Item selected!" + self.items[indexPath.row])
+        //Check if special or not
+        if (dayType == "~") {//Special
+            //Pass the lunchType as a string form of an int (which will serve as track index)
+            //See README and ScheduleTableViewController.swift for more information
+            performSegue(withIdentifier: "DisplayScheduleLunchSegue", sender: String(indexPath.row))
+        } else {
         saveLunchType(lunchType: self.items[indexPath.row])
+            
         //Display schedule with updated lunch selection.
         navigationController?.popViewController(animated: true)
-
+        }
         //performSegue(withIdentifier: "DisplayScheduleLunchSegue", sender: self.items[indexPath.row])
 
     }
