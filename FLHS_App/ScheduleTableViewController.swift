@@ -577,6 +577,8 @@ class ScheduleTableViewController: UITableViewController {
                     //TODO: Change Switch Lunch Button Text.
                     //Change selection into a number for indexing
                     let trackSelection : Int = Int(self.lunchType)!
+                    //Update Switch Lunch Button with current track selection
+                    SwitchLunchButton.title = trackNames[trackSelection]
                     /*Indices (in scheduleArray)
                      * First Course: trackIndicies[trackIndex] + 1
                      * Last Course Time: trackIndicies[trackIndex + 1] - 1
@@ -614,7 +616,6 @@ class ScheduleTableViewController: UITableViewController {
     }
     
     private func getDay(queryDate: String) {
-        //TODO: Let querydate be something other than 'currentDate'
         //Get Parse Config Data
         PFConfig.getInBackground { (config, error) in
             let dates = config?["WhatDay"] as! Array<String>
@@ -635,6 +636,8 @@ class ScheduleTableViewController: UITableViewController {
                     self.dayLetter = dates[index].substring(from: lastCharIndex) //Could be A - E, 1 - 5
                     //Get lunch
                     let lunch : String = self.getLunch().lowercased()
+                    //Update Switch Lunch Text
+                    self.SwitchLunchButton.title = self.getLunch()
                     //Load the courses.
                      self.loadCourses(lunchType: lunch)
                     //Let's display this schedule!
@@ -642,7 +645,6 @@ class ScheduleTableViewController: UITableViewController {
                 }
             }
         }
-        //TODO: Return nil and handle no day found.
         
         
     }

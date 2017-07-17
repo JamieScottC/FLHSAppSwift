@@ -13,6 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        navigationController?.navigationBar.barTintColor = UIColor.red
+        navigationController?.navigationBar.tintColor = UIColor.white
+        title = "FLHS Info"
+        
+        //UINavigationBar.barTintColor = UIColor.red
+        
     }
 
     override func didReceiveMemoryWarning() {

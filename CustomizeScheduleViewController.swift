@@ -34,10 +34,18 @@ class CustomizeScheduleViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        //The usual startup code is in viewWillAppear so that the screen updates with alternating stuffs
+        
+        
+        
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         //Load days
         days = ScheduleTableViewController.loadDays()!
         //Bundle coursefields and altbuttons into arrays; makes updating/extracting data less tedious
-         courseFields = [course1Field, course2Field, course3Field, course4Field, course5Field, course6Field, course7Field,course8Field]
+        courseFields = [course1Field, course2Field, course3Field, course4Field, course5Field, course6Field, course7Field,course8Field]
         altButtons = [alt1, alt2, alt3, alt4, alt5, alt6, alt7, alt8]
         //Update textfields with already saved custom course names
         //Go through each text field
@@ -53,12 +61,9 @@ class CustomizeScheduleViewController: UIViewController {
                 courseFields[i]?.isHidden = true
             }
         }
-        
-        
-        
-        
-    }
 
+    }
+    
     func alternates (index: Int) -> Bool {
         //Go through each day and see if course names differ
         let originalCourseName = days[0].courses[index]
@@ -115,7 +120,7 @@ class CustomizeScheduleViewController: UIViewController {
         } else {
             print("Unsuccessfully saved schedule data")
         }
-
+        navigationController?.popViewController(animated: true)
     }
     
     //Sorry, this function was named poorly...this handles the toggling of alternating. If the button toggles alternating to true, THEN it will open an alternating window (perform segue)

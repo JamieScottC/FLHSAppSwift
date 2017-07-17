@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Parse
 
 class LunchMenuViewController: UIViewController{
     
@@ -32,13 +33,15 @@ class LunchMenuViewController: UIViewController{
         let monthStr = monthArray[monthIndex]
         
         
-        //Creates Lunch Menu URL
-        let url = "http://www.bcsdny.org/files/filesystem/" + monthStr + "%20HS%20MS%20Lunch%20.pdf"
+        //Get Lunch Menu URL form parse
+        PFConfig.getInBackground { (config, error) in
+        let url = config?["LunchMenuURL"] as! String
         
         //Initialize lunchMenuWebView to display URL
         let requestURL = NSURL(string:url)
         let request = NSURLRequest(url: requestURL! as URL)
-        lunchMenuWebView.loadRequest(request as URLRequest)
+        self.lunchMenuWebView.loadRequest(request as URLRequest)
+        }
     }
     
     //Memory Exception Handling ew
