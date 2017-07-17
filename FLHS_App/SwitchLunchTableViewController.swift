@@ -12,6 +12,8 @@ class SwitchLunchTableViewController: UITableViewController  {
 
     var items : [String] = ["Early", "Middle", "Late"]
     var dayType : String!
+    var delegate : UITableViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,7 +52,6 @@ class SwitchLunchTableViewController: UITableViewController  {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
         cell.textLabel?.text = self.items[indexPath.row]
-        
         return cell
     }
     
@@ -60,13 +61,19 @@ class SwitchLunchTableViewController: UITableViewController  {
         if (dayType == "~") {//Special
             //Pass the lunchType as a string form of an int (which will serve as track index)
             //See README and ScheduleTableViewController.swift for more information
-            performSegue(withIdentifier: "DisplayScheduleLunchSegue", sender: String(indexPath.row))
+            guard let vc = delegate as? ScheduleTableViewController else {
+                //We have an error. the delegate is not a scheduletableviewcontroller
+                print("We have an error. the delegate is not a scheduletableviewcontroller")
+                return
+            }
+            vc.lunchType = String(indexPath.row)
+            //performSegue(withIdentifier: "DisplayScheduleLunchSegue", sender: String(indexPath.row))
         } else {
         saveLunchType(lunchType: self.items[indexPath.row])
             
         //Display schedule with updated lunch selection.
-        navigationController?.popViewController(animated: true)
         }
+        navigationController?.popViewController(animated: true)
         //performSegue(withIdentifier: "DisplayScheduleLunchSegue", sender: self.items[indexPath.row])
 
     }
@@ -76,6 +83,7 @@ class SwitchLunchTableViewController: UITableViewController  {
             let schedTableVC = segue.destination as! ScheduleTableViewController
             let lunch =  sender as! String
             schedTableVC.lunchType = lunch
+            
         }
     }
    

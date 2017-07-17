@@ -20,7 +20,10 @@ class ScheduleTableViewController: UITableViewController {
     let twoHourDelay5MiddleLunchTimes : [String] = ["9:45 - 10:10", "10:15 - 10:40", "10:45 - 11:10", "11:15 - 11:40", "11:45 - 12:15", "12:20 - 12:45", "12:50 - 1:15", "1:20 - 1:45", "1:50 - 2:15"]
     let twoHourDelay5LateLunchTimes: [String] = ["9:45 - 10:10", "10:15 - 10:40", "10:45 - 11:10", "11:15 - 11:40", "11:45 - 12:10", "12:15 - 12:45", "12:50 - 1:15", "1:20 - 1:45", "1:50 - 2:15"]
     let twoHourDelayNormalTimes : [String] = ["9:45 - 10:20", "10:25 - 11:00", "11:05 - 11:40", "11:45 - 12:20", "12:25 - 1:00", "1:05 -1:40", "1:45 - 2:20"]
-    let oneHourDelayEarlyLunchTimes: [String] = ["8:45 - 9:18", "9:23 - 9:56", "10:01 - 10:34", "10:39 - 11:09", "11:14 - 11:47", "11:52 - 12:25", "12:30 - 1:03", "1:08 - 1:41", "1:46 - 2:20"]
+    let oneHourDelayEarlyLunchTimes1 = ["8:45 - 9:30", "9:35 - 10:20", "10:25 - 11:00","11:05 - 11:50","11:55 - 12:40","12:45 - 1:30", "1:35 - 2:20"] //For all days except E/5 (A,1,B,2,C,3,D,4)
+    let oneHourDelayMiddleLunchTimes1 = ["8:45 - 9:30", "9:35 - 10:20", "10:25 - 11:10","11:15 - 11:50","11:55 - 12:40","12:45 - 1:30", "1:35 - 2:20"]
+    let oneHourDelayLateLunchTimes1 = ["8:45 - 9:30", "9:35 - 10:20", "10:25 - 11:10","11:15 - 12:00","12:05 - 12:40","12:45 - 1:30", "1:35 - 2:20"]
+    let oneHourDelayEarlyLunchTimes: [String] = ["8:45 - 9:18", "9:23 - 9:56", "10:01 - 10:34", "10:39 - 11:09", "11:14 - 11:47", "11:52 - 12:25", "12:30 - 1:03", "1:08 - 1:41", "1:46 - 2:20"] //For E/5 Days
     let oneHourDelayMiddleLunchTimes: [String] = ["8:45 - 9:18", "9:23 - 9:56", "10:01 - 10:34", "10:39 - 11:12", "11:17 - 11:47", "11:52 - 12:25", "12:30 - 1:03", "1:08 - 1:41", "1:46 - 2:20"]
     let oneHourDelayLateLunchTimes : [String] = ["8:45 - 9:18", "9:23 - 9:56", "10:01 - 10:34", "10:39 - 11:12", "11:14 - 11:50", "11:55 - 12:25", "12:30 - 1:03", "1:08 - 1:41", "1:46 - 2:20"]
     let advLunch1Courses: [String] = ["Course 1", "Course 2", "Advisory", "Course 3", "Lunch", "Course 4", "Course 5", "Course 6", "Course 7", "Course 8"]
@@ -67,6 +70,19 @@ class ScheduleTableViewController: UITableViewController {
     var trackOptions : [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Most my set up code is on ViewWillAppear instead so that when the back button is pressed, the screen updates.
+        
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //In case we revisit the page (after changing lunch, for example), let's clear the courses
+        courses = []
         //Check if we have a pre-selected queryDate (chosen with date button)
         if (queryDate != nil) {
             //That's great! A date is already selected and sent through a segue.
@@ -78,13 +94,20 @@ class ScheduleTableViewController: UITableViewController {
             queryDate = formatter.string(from: date)
         }
         
+        print(queryDate)
+        if (self.lunchType != nil) {
+            print(self.lunchType)
+        } else {
+            print("lunchType is nil")
+        }
+        
         //Set the button text to the query date. This will orient the user as to which day they are viewing.
         DateButton.setTitle(queryDate, for: .normal)
         //Load custom schedule data
         customDays = ScheduleTableViewController.loadDays()
         //If loading the days was unsuccessful, generate the base plate (probably first time user ran schedule portion of app)
         if (customDays == nil) {
-            print("Trying to generate default course settings...")
+            //There is no user saved data. We will generate the default settings now.
             customDays = generateDays()
         }
         
@@ -92,12 +115,7 @@ class ScheduleTableViewController: UITableViewController {
         
         //Find Day Type we are trying to load schedule for
         getDay(queryDate: queryDate)
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -202,6 +220,7 @@ class ScheduleTableViewController: UITableViewController {
                 //For more info on special schedules, check out the README
                 VC.items = trackOptions
                 VC.dayType = "~"
+                VC.delegate = self
             }
             
         }
@@ -410,11 +429,65 @@ class ScheduleTableViewController: UITableViewController {
                 }
                 break
             case "1HD": //1 Hour Delay
-                //TODO: Handle 1 hour delays
                 var courseNames : [String] = []
                 var times : [String] = []
                 if (dayLetter == "E" || dayLetter == "5") {
                     if (lunchType == "early") {
+                        courseNames = day5Lunch1Courses
+                        times = oneHourDelayEarlyLunchTimes
+                    } else if lunchType == "middle" {
+                        courseNames = day5Lunch2Courses
+                        times = oneHourDelayMiddleLunchTimes
+                    } else if lunchType == "late" {
+                        courseNames = day5Lunch3Courses
+                        times = oneHourDelayLateLunchTimes
+                    }
+                } else {
+                    //Handle times: depends on lunch
+                    if (lunchType == "early") {
+                        times = oneHourDelayEarlyLunchTimes1
+                    } else if lunchType == "middle" {
+                        times = oneHourDelayMiddleLunchTimes1
+                    } else if lunchType == "late" {
+                        times = oneHourDelayLateLunchTimes1
+                    }
+                    //Handle courses: depends on day and lunch
+                    if (dayLetter == "1" || dayLetter == "A") {
+                        if (lunchType == "early") {
+                            courseNames = day1Lunch1Courses
+                        } else if (lunchType == "middle") {
+                            courseNames = day1Lunch2Courses
+                        } else if (lunchType == "late") {
+                            courseNames = day1Lunch3Courses
+                        }
+                    } else if (dayLetter == "2" || dayLetter == "B") {
+                        if (lunchType == "early") {
+                            courseNames = day2Lunch1Courses
+                        } else if (lunchType == "middle") {
+                            courseNames = day2Lunch2Courses
+                        } else if (lunchType == "late") {
+                            courseNames = day2Lunch3Courses
+                        }
+                    } else if (dayLetter == "3" || dayLetter == "C") {
+                        if (lunchType == "early") {
+                            courseNames = day3Lunch1Courses
+                        } else if (lunchType == "middle") {
+                            courseNames = day3Lunch2Courses
+                        } else if (lunchType == "late") {
+                            courseNames = day3Lunch3Courses
+                        }
+                    } else if (dayLetter == "4" || dayLetter == "D") {
+                        if (lunchType == "early") {
+                            courseNames = day4Lunch1Courses
+                        } else if (lunchType == "middle") {
+                            courseNames = day4Lunch2Courses
+                        } else if (lunchType == "late") {
+                            courseNames = day4Lunch3Courses
+                        }
+                    }
+                    //Load em up!
+                    for i in 0 ..< courseNames.count {
+                        courses.append(Course(name: courseNames[i],time: times[i]))
                     }
                 }
                 break
@@ -474,7 +547,6 @@ class ScheduleTableViewController: UITableViewController {
                 }
                 break
             default: //SPECIAL
-                //TODO: Handle special schedules (and config typos!)
                 //Check if the first character of the day type is "~", the notation for a special schedule
                 let firstCharIndex = dayType.index(dayType.startIndex, offsetBy: 1)
                 if (dayType.substring(to: firstCharIndex) == "~") {
@@ -502,7 +574,7 @@ class ScheduleTableViewController: UITableViewController {
                     if (self.lunchType == nil || self.lunchType == "early" || self.lunchType == "middle" || self.lunchType == "late") {//the user didn't select a particular track. Let's convert it to a number
                         self.lunchType = "0"
                     }
-                    //TODO: Handle selection of other tracks.
+                    //TODO: Change Switch Lunch Button Text.
                     //Change selection into a number for indexing
                     let trackSelection : Int = Int(self.lunchType)!
                     /*Indices (in scheduleArray)
@@ -570,7 +642,6 @@ class ScheduleTableViewController: UITableViewController {
                 }
             }
         }
-        
         //TODO: Return nil and handle no day found.
         
         
@@ -578,8 +649,7 @@ class ScheduleTableViewController: UITableViewController {
     
     private func getLunch() -> String {
         if (lunchType != nil) {
-            //Preselected. Let's follow that.
-            //TODO: Figure out way to pass selected track for special schedules
+            //Preselected. Let's follow that. Probably for a selected track for a special schedule
             return lunchType
         } else if (customDays != nil) {
             //Use saved setting on disk
@@ -589,9 +659,7 @@ class ScheduleTableViewController: UITableViewController {
                 //A corresponding day was found.
                 return customDays![index].lunchType
             }
-            
         }
-        
         return "early"
     }
     
@@ -613,12 +681,14 @@ class ScheduleTableViewController: UITableViewController {
     
     @IBAction func switchLunch(_ sender: Any) {
         //Check if it's a special schedule by seeing if dayType starts with ~
-        let firstCharIndex = dayType.index(dayType.startIndex, offsetBy: 1)
-        if (dayType.substring(to: firstCharIndex) == "~") {
-            performSegue(withIdentifier: "switchLunchSegue", sender: dayType)
-
+        //TODO:Fix index issue
+        if dayType.characters.count > 0 {
+            let firstCharIndex = dayType.index(dayType.startIndex, offsetBy: 1)
+            if (dayType.substring(to: firstCharIndex) == "~") {
+                performSegue(withIdentifier: "switchLunchSegue", sender: dayType)
+            }
         } else { //If it's not special, there are only three possible options: "Early","Middle",and "Late"
-            performSegue(withIdentifier: "switchLunchSegue", sender: dayType)
+            performSegue(withIdentifier: "switchLunchSegue", sender: dayLetter)
         }
         
         
