@@ -81,8 +81,9 @@ class ScheduleTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //In case we revisit the page (after changing lunch, for example), let's clear the courses
+        //In case we revisit the page (after changing lunch, for example), let's clear the courses, trackOptions, all that stuff
         courses = []
+        trackOptions = []
         //Check if we have a pre-selected queryDate (chosen with date button)
         if (queryDate != nil) {
             //That's great! A date is already selected and sent through a segue.
@@ -223,6 +224,10 @@ class ScheduleTableViewController: UITableViewController {
                 VC.delegate = self
             }
             
+        } else if segue.identifier == "changeDate" {
+            let VC = segue.destination as! DatePickerViewController
+            //Pass this object to DatePicker so that when a date is selected, the queryDate variable is updated
+            VC.delegate = self
         }
     }
  
@@ -497,13 +502,13 @@ class ScheduleTableViewController: UITableViewController {
                 if (dayLetter == "E" || dayLetter == "5") {
                     if (lunchType == "early") {
                         courseNames = day5Lunch1Courses
-                        times = day5Lunch1Times
+                        times = twoHourDelay5EarlyLunchTimes
                     } else if (lunchType == "middle") {
-                        courseNames = day5Lunch2Times
-                        times = day5Lunch2Times
+                        courseNames = day5Lunch2Courses
+                        times = twoHourDelay5MiddleLunchTimes
                     } else if (lunchType == "late") {
                         courseNames = day5Lunch3Courses
-                        times = day5Lunch3Times
+                        times = twoHourDelay5LateLunchTimes
                     }
                 } else{
                     times = twoHourDelayNormalTimes //Since the periods are the same length as lunch, independent of lunch type
@@ -667,24 +672,13 @@ class ScheduleTableViewController: UITableViewController {
     
     //MARK: Persisting Data
     
-    private func saveQueryDate(queryDate: String) {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(queryDate, toFile: UserScheduleData.ArchiveURL.path)
-        if isSuccessfulSave {
-            print("Successfully saved query date")
-        } else {
-            print("Unsuccessfully saved query date")
-        }
-    }
-    
-
     private func loadQueryDate() -> UserScheduleData? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: UserScheduleData.ArchiveURL.path) as? UserScheduleData
     }
     
     @IBAction func switchLunch(_ sender: Any) {
         //Check if it's a special schedule by seeing if dayType starts with ~
-        //TODO:Fix index issue
-        if dayType.characters.count > 0 {
+        if dayType.characters.count > 0 && trackOptions.count > 0 {
             let firstCharIndex = dayType.index(dayType.startIndex, offsetBy: 1)
             if (dayType.substring(to: firstCharIndex) == "~") {
                 performSegue(withIdentifier: "switchLunchSegue", sender: dayType)
@@ -777,4 +771,9 @@ private func addAdvisory(originalCourses: [String]) -> [String] {
     return coursesWithAdvisory
 }
     
+    @IBAction func changeDate(_ sender: Any) {
+        performSegue(withIdentifier: "changeDate", sender: queryDate)
+
+    }
+
 }

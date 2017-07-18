@@ -320,13 +320,12 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="YJN-hO-S6S">
-                        <nil key="title"/>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="l9f-R3-Mw4">
                             <rect key="frame" x="113" y="7" width="150" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Date"/>
                             <connections>
-                                <segue destination="Qra-1b-xtQ" kind="show" id="J0o-d3-TNZ"/>
+                                <action selector="changeDate:" destination="zuK-I4-AfI" eventType="touchUpInside" id="D5F-KR-hoK"/>
                             </connections>
                         </button>
                         <rightBarButtonItems>
@@ -347,6 +346,7 @@
                         <outlet property="DateButton" destination="l9f-R3-Mw4" id="lbB-ra-zPn"/>
                         <outlet property="SwitchLunchButton" destination="b1W-6F-SCz" id="a5c-cV-WDS"/>
                         <segue destination="oXr-05-3b8" kind="show" identifier="switchLunchSegue" id="wZN-Pl-jrZ"/>
+                        <segue destination="Qra-1b-xtQ" kind="show" identifier="changeDate" id="YzE-32-amb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPG-PI-ROb" userLabel="First Responder" sceneMemberID="firstResponder"/>

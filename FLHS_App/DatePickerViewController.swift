@@ -43,6 +43,9 @@ class DatePickerViewController : UIViewController {
     
     
     @IBOutlet var DatePicker: UIDatePicker!
+    var delegate : UITableViewController!
+
+    
     @IBAction func saveQueryDate(_ sender: Any) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.short
@@ -68,7 +71,20 @@ class DatePickerViewController : UIViewController {
         }
         //Now just put em together!
         let queryDate = monthSubString + "/" + dateSubString
-        performSegue(withIdentifier: "displayScheduleSegue", sender: queryDate)
+        guard let vc = delegate as? ScheduleTableViewController else {
+            //We have an error. the delegate is not a scheduletableviewcontroller
+            print("We have an error. the delegate is not a scheduletableviewcontroller")
+            return
+        }
+        //Update the ScheduleTableViewController's queryDate
+        vc.queryDate = queryDate
+        //To avoid confusion with a change in lunch, let's also clear the lunch
+        vc.lunchType = nil
+        vc.trackOptions = []
+        //End this activity and revert to updated ScheduleTableViewController
+        navigationController?.popViewController(animated: true)
+
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
