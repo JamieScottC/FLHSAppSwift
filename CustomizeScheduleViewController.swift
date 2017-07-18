@@ -68,8 +68,10 @@ class CustomizeScheduleViewController: UIViewController {
         //Go through each day and see if course names differ
         let originalCourseName = days[0].courses[index]
         for i in 0 ..< days.count {
+            print(originalCourseName + " =? " + days[i].courses[index])
             if originalCourseName != days[i].courses[index] {
                 //This course DOES alternate!
+                print("Course " + String(index + 1) + " alternates")
                 return true
             }
         }
@@ -106,12 +108,16 @@ class CustomizeScheduleViewController: UIViewController {
         print(course1Field.text!)
         //Go through each course field
         for i in 0...7 {
-            //TODO: Check if alternating
-            //If not alternating, go through each day
-            for j in 0...9 {
-                //Update field
-                days[j].courses[i] = (courseFields[i]?.text!)!
+            let isAlternating : Bool = (altButtons[i]?.backgroundColor == UIColor.red)
+            
+            if (!isAlternating) {
+                //If not alternating, go through each day
+                for j in 0...9 {
+                    //Update field
+                    days[j].courses[i] = (courseFields[i]?.text!)!
+                }
             }
+            
         }
         //Save the newly updated days array to disk
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(days, toFile: Day.ArchiveURL.path)

@@ -277,7 +277,7 @@ class ScheduleTableViewController: UITableViewController {
                             courses.append(course)
                         }
                     } else if (lunchType == "late") {
-                        for index in 0 ... day2Lunch1Courses.count - 1 {
+                        for index in 0 ... day2Lunch3Courses.count - 1 {
                             let course = Course(name: day2Lunch3Courses[index], time: Lunch3Times[index])
                             courses.append(course)
                         }
@@ -301,18 +301,18 @@ class ScheduleTableViewController: UITableViewController {
                     }
                 } else if dayLetter == "E" || dayLetter == "5" {
                     if(lunchType == "early") {
-                        for index in 0 ... day1Lunch1Courses.count - 1 {
-                            let course = Course(name: day1Lunch1Courses[index], time: Lunch1Times[index])
+                        for index in 0 ... day5Lunch1Courses.count - 1 {
+                            let course = Course(name: day5Lunch1Courses[index], time: day5Lunch1Times[index])
                             courses.append(course)
                         }
                     } else if (lunchType == "middle") {
-                        for index in 0 ... day1Lunch2Courses.count - 1 {
-                            let course = Course(name: day1Lunch2Courses[index], time: Lunch2Times[index])
+                        for index in 0 ... day5Lunch2Courses.count - 1 {
+                            let course = Course(name: day5Lunch2Courses[index], time: day5Lunch2Times[index])
                             courses.append(course)
                         }
                     } else if (lunchType == "late") {
-                        for index in 0 ... day1Lunch1Courses.count - 1 {
-                            let course = Course(name: day1Lunch3Courses[index], time: Lunch3Times[index])
+                        for index in 0 ... day5Lunch3Courses.count - 1 {
+                            let course = Course(name: day5Lunch3Courses[index], time: day5Lunch3Times[index])
                             courses.append(course)
                         }
                     }

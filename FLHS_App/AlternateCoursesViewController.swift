@@ -15,31 +15,19 @@ class AlternateCoursesViewController: UIViewController {
     var alt1s : [UISegmentedControl] = []
     var alt2s : [UISegmentedControl] = []
     
-    @IBOutlet var firstCourseField: UITextField!
-  
     @IBOutlet var alt1day1: UISegmentedControl!
-    
-    @IBOutlet var altday2: UISegmentedControl!
-    
+    @IBOutlet var alt1day2: UISegmentedControl!
     @IBOutlet var alt1day3: UISegmentedControl!
-    
     @IBOutlet var alt1day4: UISegmentedControl!
-    
     @IBOutlet var alt1day5: UISegmentedControl!
-    
-    
-    @IBOutlet var secondCourseField: UITextField!
-    
-
     @IBOutlet var alt2day1: UISegmentedControl!
-    
-    @IBOutlet var alt2day4: UISegmentedControl!
-
     @IBOutlet var alt2day2: UISegmentedControl!
-    
     @IBOutlet var alt2day3: UISegmentedControl!
-    
+    @IBOutlet var alt2day4: UISegmentedControl!
     @IBOutlet var alt2day5: UISegmentedControl!
+   
+    @IBOutlet var firstCourseField: UITextField!
+    @IBOutlet var secondCourseField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         print(courseIndex)
@@ -47,7 +35,7 @@ class AlternateCoursesViewController: UIViewController {
         //Load days
         days = ScheduleTableViewController.loadDays()!
         //Create arrays of alts so that they are easier to work with  (loops!)
-        alt1s = [alt1day1, altday2, alt1day3, alt1day4, alt1day5]
+        alt1s = [alt1day1, alt1day2, alt1day3, alt1day4, alt1day5]
         alt2s = [alt2day1, alt2day2, alt2day3, alt2day4, alt2day5]
         //Set Up layout
         //Find first course name and fill in text field
@@ -103,30 +91,38 @@ class AlternateCoursesViewController: UIViewController {
     */
     
     
+    
     @IBAction func saveAlternatingCourses(_ sender: Any) {
         //Go through each UISegment, then update course.
         //First, let's do the first set of toggles
+    
         for i in 0 ..< alt1s.count {
             //Check how the toggle is set
-            if alt1s[i].isEnabledForSegment(at: 0) { //A-E
+            let alt1SegmentIndex = alt1s[i].selectedSegmentIndex
+            if alt1SegmentIndex == 0 { //A-E
                 //Update master array of custom course data
                 days[i].courses[courseIndex] = firstCourseField.text!
+                print("Day " + String(i) + " Course " + String(courseIndex + 1)  + " = " + firstCourseField.text!)
             } else { //1-5
                 days[i + 5].courses[courseIndex] = firstCourseField.text!
+                print("Day " + String(i + 5) + " Course " + String(courseIndex + 1) + " = " + firstCourseField.text!)
             }
             //Now, we do the same thing for the second set of toggles
             //Check how the toggle is set
-            if alt2s[i].isEnabledForSegment(at: 0) { //A-E
+            let alt2SegmentIndex = alt2s[i].selectedSegmentIndex
+            if alt2SegmentIndex == 0 { //A-E
                 //Update master array of custom course data
                 days[i].courses[courseIndex] = secondCourseField.text!
+                print("Day " + String(i) + " Course " + String(courseIndex + 1) + " = " + secondCourseField.text!)
             } else { //1-5
                 days[i + 5].courses[courseIndex] = secondCourseField.text!
+                print("Day " + String(i + 5) + " Course " + String(courseIndex + 1) + " = " + secondCourseField.text!)
             }
         }
         //Now lets save this new data!
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(days, toFile: Day.ArchiveURL.path)
         if isSuccessfulSave {
-            print("Successfully saved schedule data")
+            print("Successfully saved schedule data for Course " + String(courseIndex + 1))
         } else {
             print("Unsuccessfully saved schedule data")
         }
