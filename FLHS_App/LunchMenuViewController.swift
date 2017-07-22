@@ -8,10 +8,10 @@
 
 import Foundation
 import UIKit
-import Parse
+import Firebase
 
 class LunchMenuViewController: UIViewController{
-    
+    var ref: DatabaseReference!
     //View Controller for the lunch menu
     @IBOutlet weak var lunchMenuWebView: UIWebView!
     
@@ -22,7 +22,7 @@ class LunchMenuViewController: UIViewController{
     override func viewDidLoad(){
         //Standard load
         super.viewDidLoad()
-        
+        ref = Database.database().reference()
         //Retrives date from phone
         let date = Date()
         let formatter = DateFormatter()
@@ -34,15 +34,20 @@ class LunchMenuViewController: UIViewController{
         
         
         //Get Lunch Menu URL form parse
-        PFConfig.getInBackground { (config, error) in
-        let url = config?["LunchMenuURL"] as! String
+        ref.child("params").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let url = value?["LunchMenuURL"] as! String
+            
+            //Initialize lunchMenuWebView to display URL
+            let requestURL = NSURL(string:url)
+            let request = NSURLRequest(url: requestURL! as URL)
+            self.lunchMenuWebView.loadRequest(request as URLRequest)
+        })
         
-        //Initialize lunchMenuWebView to display URL
-        let requestURL = NSURL(string:url)
-        let request = NSURLRequest(url: requestURL! as URL)
-        self.lunchMenuWebView.loadRequest(request as URLRequest)
+       
         }
-    }
+    
     
     //Memory Exception Handling ew
     override func didReceiveMemoryWarning() {
