@@ -68,6 +68,8 @@ class ScheduleTableViewController: UITableViewController {
     var queryDate : String!
     var lunchType : String!
     var trackOptions : [String] = []
+    var specialDayCourseNames : [String] = []
+    var specialDayTimes : [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
@@ -136,6 +138,7 @@ class ScheduleTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        //Return number of courses; changes depending on number of courses that day.
+        print("number of courses is \(courses.count)")
         return courses.count
     }
 
@@ -559,7 +562,7 @@ class ScheduleTableViewController: UITableViewController {
                 if (dayType.substring(to: firstCharIndex) == "~") {
                     //Yay! It is in fact a special schedule.
                     //Let's get this schedule data
-                   ref.child("params").observeSingleEvent(of: .value, with: { (snapshot) in
+                   ref.child("params").observe(.value, with: { (snapshot) in
                     self.value = snapshot.value as! NSDictionary
                     let scheduleData = self.value[self.dayType + self.dayLetter] as! Array<String>
                     //Create arrays to store track names and indicies
@@ -570,6 +573,7 @@ class ScheduleTableViewController: UITableViewController {
                         let string : String = scheduleData[i]
                         //Check if first character of this string starts with a slash - the notation for a track
                         let firstCharStringIndex = string.index(string.startIndex, offsetBy: 1)
+                        
                         if (string.substring(to: firstCharStringIndex) == "/") {
                             //This is the name of a track. Let's add the index and name to the arrays.
                             trackIndicies.append(i)
@@ -616,13 +620,15 @@ class ScheduleTableViewController: UITableViewController {
                             }
                         }
                     }
-                    
-                    //Yay! Now let's just add these courseNames and times into the courses array
-                    for i in 0..<times.count {
-                        self.courses.append(Course(name: courseNames[i], time: times[i]))
-                    }
+                    self.specialDayCourseNames = courseNames
+                    self.specialDayTimes = times
+                   
                 })
-                }
+                    //Yay! Now let's just add these courseNames and times into the courses array
+                    for i in 0..<specialDayTimes.count {
+                        courses.append(Course(name: specialDayCourseNames[i], time: specialDayTimes[i]))
+                    }
+            }
         }
     }
     
