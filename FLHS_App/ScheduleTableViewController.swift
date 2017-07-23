@@ -73,6 +73,7 @@ class ScheduleTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
+
         //Most my set up code is on ViewWillAppear instead so that when the back button is pressed, the screen updates.
         
         // Uncomment the following line to preserve selection between presentations
@@ -562,8 +563,7 @@ class ScheduleTableViewController: UITableViewController {
                 if (dayType.substring(to: firstCharIndex) == "~") {
                     //Yay! It is in fact a special schedule.
                     //Let's get this schedule data
-                   ref.child("params").observe(.value, with: { (snapshot) in
-                    self.value = snapshot.value as! NSDictionary
+                    
                     let scheduleData = self.value[self.dayType + self.dayLetter] as! Array<String>
                     //Create arrays to store track names and indicies
                     //(A track is a schedule route a student can take. See the README for more details.)
@@ -623,11 +623,13 @@ class ScheduleTableViewController: UITableViewController {
                     self.specialDayCourseNames = courseNames
                     self.specialDayTimes = times
                    
-                })
+                
+                    
                     //Yay! Now let's just add these courseNames and times into the courses array
                     for i in 0..<specialDayTimes.count {
                         courses.append(Course(name: specialDayCourseNames[i], time: specialDayTimes[i]))
                     }
+                    
             }
         }
     }
@@ -639,6 +641,7 @@ class ScheduleTableViewController: UITableViewController {
             ref.child("params").observe(.value, with: {(snapshot ) in
             let value = snapshot.value as! NSDictionary
             let dates = value["WhatDay"] as! Array<String>
+            self.value = value
             //Go through each day item.
             for index in 0 ... (dates.count) - 1 {
                 let strIndex = dates[index].index((dates[index].startIndex), offsetBy: 5)
