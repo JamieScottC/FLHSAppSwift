@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		054F70A41EB03CDC00971779 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054F70A21EB03CDC00971779 /* Bolts.framework */; };
-		054F70A51EB03CDC00971779 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054F70A31EB03CDC00971779 /* Parse.framework */; };
 		054F70AA1EB03F4700971779 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054F70A61EB03F4700971779 /* AudioToolbox.framework */; };
 		054F70AB1EB03F4700971779 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 054F70A71EB03F4700971779 /* libsqlite3.tbd */; };
 		054F70AC1EB03F4700971779 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 054F70A81EB03F4700971779 /* libstdc++.6.tbd */; };
@@ -59,8 +57,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		054F70A21EB03CDC00971779 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = FLHS_App/Bolts.framework; sourceTree = "<group>"; };
-		054F70A31EB03CDC00971779 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = FLHS_App/Parse.framework; sourceTree = "<group>"; };
 		054F70A61EB03F4700971779 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		054F70A71EB03F4700971779 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		054F70A81EB03F4700971779 /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
@@ -83,8 +79,6 @@
 		059AB44F1E22CEE3008CE585 /* FLHS_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FLHS_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		059AB4531E22CEE3008CE585 /* FLHS_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLHS_AppUITests.swift; sourceTree = "<group>"; };
 		059AB4551E22CEE3008CE585 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		05A3800C1EB03C4000D1D399 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../Downloads/Parse-iOS (1)/Bolts.framework"; sourceTree = "<group>"; };
-		05A3800D1EB03C4000D1D399 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../Downloads/Parse-iOS (1)/Parse.framework"; sourceTree = "<group>"; };
 		05EA12D01F17FB9B001BC217 /* CustomizeScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomizeScheduleViewController.swift; path = ../CustomizeScheduleViewController.swift; sourceTree = "<group>"; };
 		05EA12D21F180EEB001BC217 /* AlternateCoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlternateCoursesViewController.swift; sourceTree = "<group>"; };
 		05EF13AA1E9EC8AF0076F9CD /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -114,8 +108,6 @@
 				054F70AB1EB03F4700971779 /* libsqlite3.tbd in Frameworks */,
 				054F70AC1EB03F4700971779 /* libstdc++.6.tbd in Frameworks */,
 				054F70AD1EB03F4700971779 /* SystemConfiguration.framework in Frameworks */,
-				054F70A41EB03CDC00971779 /* Bolts.framework in Frameworks */,
-				054F70A51EB03CDC00971779 /* Parse.framework in Frameworks */,
 				F3BC63688D0C92AF3068DE11 /* Pods_FLHS_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,10 +205,6 @@
 				054F70A71EB03F4700971779 /* libsqlite3.tbd */,
 				054F70A81EB03F4700971779 /* libstdc++.6.tbd */,
 				054F70A91EB03F4700971779 /* SystemConfiguration.framework */,
-				054F70A21EB03CDC00971779 /* Bolts.framework */,
-				054F70A31EB03CDC00971779 /* Parse.framework */,
-				05A3800C1EB03C4000D1D399 /* Bolts.framework */,
-				05A3800D1EB03C4000D1D399 /* Parse.framework */,
 				44BD79A25AB5B527356C63FC /* Pods_FLHS_App.framework */,
 				9D2A17692257B3B478721577 /* Pods_FLHS_AppTests.framework */,
 				46C4FCD25056CF612E0FD9DB /* Pods_FLHS_AppUITests.framework */,
