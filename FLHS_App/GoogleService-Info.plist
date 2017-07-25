@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>339379212771-5at2vejkbur2no06l7iklmkdvbsmno45.apps.googleusercontent.com</string>
+	<string>377257851199-te2qn78nsmj4v5dfcuko9p4fjnoiddul.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.339379212771-5at2vejkbur2no06l7iklmkdvbsmno45</string>
+	<string>com.googleusercontent.apps.377257851199-te2qn78nsmj4v5dfcuko9p4fjnoiddul</string>
 	<key>API_KEY</key>
-	<string>AIzaSyD-Q6Ed4i7rxGTqisFL7mHwq6jWD5AuSMM</string>
+	<string>AIzaSyBsAUcwdhEq7GpgnDWDKjwP3HYUG1dI4SY</string>
 	<key>GCM_SENDER_ID</key>
-	<string>339379212771</string>
+	<string>377257851199</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>org.bcsdny.FLHS-AppF</string>
+	<string>org.bcsdny.FLHS-App</string>
 	<key>PROJECT_ID</key>
-	<string>flhsapp</string>
+	<string>flhs-info</string>
 	<key>STORAGE_BUCKET</key>
-	<string>flhsapp.appspot.com</string>
+	<string>flhs-info.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:339379212771:ios:e4d2798fee471f8f</string>
+	<string>1:377257851199:ios:52e8497eb4b568f0</string>
 	<key>DATABASE_URL</key>
-	<string>https://flhsapp.firebaseio.com</string>
+	<string>https://flhs-info.firebaseio.com</string>
 </dict>
 </plist>

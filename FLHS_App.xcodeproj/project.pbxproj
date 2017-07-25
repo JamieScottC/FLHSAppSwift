@@ -29,9 +29,9 @@
 		05EF13AD1E9ED7880076F9CD /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EF13AC1E9ED7880076F9CD /* ScheduleTableViewCell.swift */; };
 		05EF13AF1E9EDC4E0076F9CD /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EF13AE1E9EDC4E0076F9CD /* ScheduleTableViewController.swift */; };
 		05EF13B11E9EDF1D0076F9CD /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EF13B01E9EDF1D0076F9CD /* Course.swift */; };
-		53F66CA91F24143600A7E1F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53F66CA81F24143600A7E1F9 /* GoogleService-Info.plist */; };
-		53F66CAA1F24143600A7E1F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53F66CA81F24143600A7E1F9 /* GoogleService-Info.plist */; };
-		53F66CAB1F24143600A7E1F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53F66CA81F24143600A7E1F9 /* GoogleService-Info.plist */; };
+		530DCAD61F26D3E400050102 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 530DCAD51F26D3E400050102 /* GoogleService-Info.plist */; };
+		530DCAD71F26D3E400050102 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 530DCAD51F26D3E400050102 /* GoogleService-Info.plist */; };
+		530DCAD81F26D3E400050102 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 530DCAD51F26D3E400050102 /* GoogleService-Info.plist */; };
 		B481AC46552B63369775DBA2 /* Pods_FLHS_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C4FCD25056CF612E0FD9DB /* Pods_FLHS_AppUITests.framework */; };
 		D37024DC1EA167160057D5F7 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37024DB1EA167160057D5F7 /* AnnouncementViewController.swift */; };
 		D37024DE1EA169BF0057D5F7 /* LunchMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37024DD1EA169BF0057D5F7 /* LunchMenuViewController.swift */; };
@@ -89,7 +89,7 @@
 		44BD79A25AB5B527356C63FC /* Pods_FLHS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FLHS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C4FCD25056CF612E0FD9DB /* Pods_FLHS_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FLHS_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B62D7AF1B400F9BBDA9DDFF /* Pods-FLHS_AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLHS_AppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FLHS_AppUITests/Pods-FLHS_AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		53F66CA81F24143600A7E1F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		530DCAD51F26D3E400050102 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9D2A17692257B3B478721577 /* Pods_FLHS_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FLHS_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2C663950B40C79B2F18D36 /* Pods-FLHS_AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLHS_AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FLHS_AppTests/Pods-FLHS_AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C394F20BE357E379407BA86E /* Pods-FLHS_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLHS_App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FLHS_App/Pods-FLHS_App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 		059AB42F1E22CEE3008CE585 /* FLHS_App */ = {
 			isa = PBXGroup;
 			children = (
-				53F66CA81F24143600A7E1F9 /* GoogleService-Info.plist */,
+				530DCAD51F26D3E400050102 /* GoogleService-Info.plist */,
 				05EA12D01F17FB9B001BC217 /* CustomizeScheduleViewController.swift */,
 				D37024DB1EA167160057D5F7 /* AnnouncementViewController.swift */,
 				D37024DD1EA169BF0057D5F7 /* LunchMenuViewController.swift */,
@@ -343,7 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				059AB43E1E22CEE3008CE585 /* LaunchScreen.storyboard in Resources */,
-				53F66CA91F24143600A7E1F9 /* GoogleService-Info.plist in Resources */,
+				530DCAD61F26D3E400050102 /* GoogleService-Info.plist in Resources */,
 				059AB43B1E22CEE3008CE585 /* Assets.xcassets in Resources */,
 				059AB4361E22CEE3008CE585 /* Main.storyboard in Resources */,
 			);
@@ -353,7 +353,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53F66CAA1F24143600A7E1F9 /* GoogleService-Info.plist in Resources */,
+				530DCAD71F26D3E400050102 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +361,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53F66CAB1F24143600A7E1F9 /* GoogleService-Info.plist in Resources */,
+				530DCAD81F26D3E400050102 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,7 +683,7 @@
 				INFOPLIST_FILE = FLHS_App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.bcsdny.FLHS-AppF";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.bcsdny.FLHS-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FLHS_App/FLHS_App-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -704,7 +704,7 @@
 				INFOPLIST_FILE = FLHS_App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.bcsdny.FLHS-AppF";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.bcsdny.FLHS-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FLHS_App/FLHS_App-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
