@@ -98,10 +98,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="201"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_launcher-web" translatesAutoresizingMaskIntoConstraints="NO" id="UvU-Tp-W7x">
-                                                <rect key="frame" x="0.0" y="0.0" width="159.5" height="201"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="201"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="215.5" placeholderIntrinsicHeight="100" text="FLHS Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="196" translatesAutoresizingMaskIntoConstraints="NO" id="14N-TE-qAp">
-                                                <rect key="frame" x="159.5" y="50.5" width="215.5" height="100"/>
+                                                <rect key="frame" x="160" y="50.5" width="215" height="100"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="33"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -306,13 +306,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abg-3k-u5q">
-                                            <rect key="frame" x="135" y="23.5" width="106.5" height="23"/>
+                                            <rect key="frame" x="134" y="24" width="107" height="23"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Sr-gj-sEq">
-                                            <rect key="frame" x="170" y="47.5" width="35.5" height="20"/>
+                                            <rect key="frame" x="169.5" y="48" width="36" height="21"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -392,7 +392,7 @@
                                 </date>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGF-36-hvZ">
-                                <rect key="frame" x="134.5" y="92" width="106.5" height="24"/>
+                                <rect key="frame" x="134" y="92" width="107" height="24"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -483,27 +483,31 @@
                                 <rect key="frame" x="16" y="74" width="343" height="549"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="RMv-CL-06h">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0T0-c6-xHH">
-                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="34"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OA6-G9-4sL">
-                                                <rect key="frame" x="114.5" y="0.0" width="114" height="33"/>
+                                                <rect key="frame" x="114.5" y="0.0" width="114" height="34"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BiE-mM-suh">
-                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="33"/>
+                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="34"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                 <state key="normal" title="Alternate">
                                                     <color key="titleColor" red="1" green="0.18823529411764706" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="openAltWindow:" destination="Xgm-21-ezi" eventType="touchUpInside" id="Nl3-p3-Wg0"/>
                                                 </connections>
@@ -511,26 +515,31 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="smL-dy-1E2">
-                                        <rect key="frame" x="0.0" y="53" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="64" width="343" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9U8-Hg-gYX" userLabel="Course 2">
-                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="34"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8nn-HB-MCE">
-                                                <rect key="frame" x="114.5" y="0.0" width="114" height="33"/>
+                                                <rect key="frame" x="114.5" y="0.0" width="114" height="34"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2a-GD-hBK">
-                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="33"/>
+                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="34"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                 <state key="normal" title="Alternate">
                                                     <color key="titleColor" red="1" green="0.18823529411764706" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="openAltWindow:" destination="Xgm-21-ezi" eventType="primaryActionTriggered" id="nOw-tq-EHK"/>
                                                 </connections>
@@ -538,26 +547,31 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ORW-iu-63b">
-                                        <rect key="frame" x="0.0" y="106" width="343" height="32"/>
+                                        <rect key="frame" x="0.0" y="127.5" width="343" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7u-AV-evM">
-                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="32"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="34"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Voj-Se-eLC">
-                                                <rect key="frame" x="114.5" y="0.0" width="114" height="32"/>
+                                                <rect key="frame" x="114.5" y="0.0" width="114" height="34"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAV-49-iGx">
-                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="32"/>
+                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="34"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                 <state key="normal" title="Alternate">
                                                     <color key="titleColor" red="1" green="0.18823529411764706" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="openAltWindow:" destination="Xgm-21-ezi" eventType="primaryActionTriggered" id="i84-ln-ygd"/>
                                                 </connections>
@@ -565,26 +579,31 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="QK8-zG-MQ0">
-                                        <rect key="frame" x="0.0" y="158" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="191.5" width="343" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6Z-tV-YJS">
-                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="34"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="luh-s4-1Wb">
-                                                <rect key="frame" x="114.5" y="0.0" width="114" height="33"/>
+                                                <rect key="frame" x="114.5" y="0.0" width="114" height="34"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bue-Sr-MRI">
-                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="33"/>
+                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="34"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                 <state key="normal" title="Alternate">
                                                     <color key="titleColor" red="1" green="0.18823529411764706" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="openAltWindow:" destination="Xgm-21-ezi" eventType="primaryActionTriggered" id="oXX-Hy-Blf"/>
                                                 </connections>
@@ -592,26 +611,31 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="h0I-Jp-IRf">
-                                        <rect key="frame" x="0.0" y="211" width="343" height="32"/>
+                                        <rect key="frame" x="0.0" y="255" width="343" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="viU-6L-DfZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="32"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="34"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SrC-5k-ErQ">
-                                                <rect key="frame" x="114.5" y="0.0" width="114" height="32"/>
+                                                <rect key="frame" x="114.5" y="0.0" width="114" height="34"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5c-gK-0Fe">
-                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="32"/>
+                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="34"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                 <state key="normal" title="Alternate">
                                                     <color key="titleColor" red="1" green="0.18823529411764706" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="openAltWindow:" destination="Xgm-21-ezi" eventType="primaryActionTriggered" id="2c6-ZM-1DC"/>
                                                 </connections>
@@ -619,27 +643,32 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Mf7-om-9Fg">
-                                        <rect key="frame" x="0.0" y="263" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="319" width="343" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course 6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdw-13-KML">
-                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="34"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P81-rB-c8X">
-                                                <rect key="frame" x="114.5" y="0.0" width="114" height="33"/>
+                                                <rect key="frame" x="114.5" y="0.0" width="114" height="34"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77b-p8-sxr">
-                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="33"/>
+                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="34"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                 <state key="normal" title="Alternate">
                                                     <color key="titleColor" red="1" green="0.18823529411764706" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="openAltWindow:" destination="Xgm-21-ezi" eventType="primaryActionTriggered" id="Nnw-Ko-W0C"/>
                                                 </connections>
@@ -647,26 +676,31 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rbj-Y1-VCb">
-                                        <rect key="frame" x="0.0" y="316" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="382.5" width="343" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course 7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xa-fu-7U4">
-                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="34"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hhP-TJ-gG4">
-                                                <rect key="frame" x="114.5" y="0.0" width="114" height="33"/>
+                                                <rect key="frame" x="114.5" y="0.0" width="114" height="34"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0i-4B-2dB">
-                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="33"/>
+                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="34"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                 <state key="normal" title="Alternate">
                                                     <color key="titleColor" red="1" green="0.18823529411764706" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="openAltWindow:" destination="Xgm-21-ezi" eventType="primaryActionTriggered" id="AUr-jw-rKh"/>
                                                 </connections>
@@ -674,69 +708,54 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9xA-bV-EZo">
-                                        <rect key="frame" x="0.0" y="369" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="446.5" width="343" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course 8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5w-U4-14D">
-                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="34"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NQb-zC-Vul">
-                                                <rect key="frame" x="114.5" y="0.0" width="114" height="30"/>
+                                                <rect key="frame" x="114.5" y="0.0" width="114" height="34"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HG-qv-eC5">
-                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="30"/>
+                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="34"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                 <state key="normal" title="Alternate">
                                                     <color key="titleColor" red="1" green="0.18823529411764706" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="openAltWindow:" destination="Xgm-21-ezi" eventType="primaryActionTriggered" id="hpG-8u-cb7"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nEZ-Hv-c8y">
-                                        <rect key="frame" x="0.0" y="419" width="343" height="130"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNf-wK-ozo">
-                                                <rect key="frame" x="104" y="28" width="135" height="39"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
-                                                <state key="normal" title="Load Schedule">
-                                                    <color key="titleColor" red="1" green="0.18823529411764706" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="saveCustomizedSchedule:" destination="Xgm-21-ezi" eventType="touchUpInside" id="2Wp-ut-CSh"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="yNf-wK-ozo" firstAttribute="top" secondItem="nEZ-Hv-c8y" secondAttribute="topMargin" constant="20" id="fWr-du-cKM"/>
-                                        </constraints>
-                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNf-wK-ozo">
+                                        <rect key="frame" x="0.0" y="510" width="343" height="39"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
+                                        <state key="normal" title="Load Schedule">
+                                            <color key="titleColor" red="1" green="0.18823529411764706" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveCustomizedSchedule:" destination="Xgm-21-ezi" eventType="touchUpInside" id="2Wp-ut-CSh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="smL-dy-1E2" firstAttribute="top" secondItem="iOC-qB-zyG" secondAttribute="top" constant="53" id="51k-K7-2Fb"/>
-                                    <constraint firstItem="nEZ-Hv-c8y" firstAttribute="top" secondItem="9xA-bV-EZo" secondAttribute="bottom" constant="20" id="6jh-FQ-MUN"/>
-                                    <constraint firstItem="QK8-zG-MQ0" firstAttribute="top" secondItem="iOC-qB-zyG" secondAttribute="top" constant="158" id="SzR-Xj-oJe"/>
-                                    <constraint firstItem="Mf7-om-9Fg" firstAttribute="top" secondItem="iOC-qB-zyG" secondAttribute="top" constant="263" id="Tvq-YO-jCO"/>
-                                    <constraint firstItem="h0I-Jp-IRf" firstAttribute="top" secondItem="iOC-qB-zyG" secondAttribute="top" constant="211" id="bUV-ke-724"/>
-                                    <constraint firstItem="ORW-iu-63b" firstAttribute="top" secondItem="iOC-qB-zyG" secondAttribute="top" constant="106" id="cc8-Ca-mgz"/>
-                                    <constraint firstItem="rbj-Y1-VCb" firstAttribute="top" secondItem="iOC-qB-zyG" secondAttribute="top" constant="316" id="e9N-pV-BS9"/>
-                                    <constraint firstItem="9xA-bV-EZo" firstAttribute="top" secondItem="iOC-qB-zyG" secondAttribute="top" constant="369" id="yN2-by-57R"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="NpE-Ss-gaf" firstAttribute="top" secondItem="iOC-qB-zyG" secondAttribute="bottom" id="BZM-U4-Py0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iOC-qB-zyG" secondAttribute="trailing" id="OOC-Qi-gxR"/>
-                            <constraint firstItem="yNf-wK-ozo" firstAttribute="centerX" secondItem="hFu-Yx-fhd" secondAttribute="centerX" id="Tj3-GI-r45"/>
                             <constraint firstItem="iOC-qB-zyG" firstAttribute="centerX" secondItem="hFu-Yx-fhd" secondAttribute="centerX" id="ez1-lF-NqY"/>
                             <constraint firstItem="iOC-qB-zyG" firstAttribute="leading" secondItem="hFu-Yx-fhd" secondAttribute="leadingMargin" id="liF-gO-Za6"/>
                             <constraint firstItem="iOC-qB-zyG" firstAttribute="top" secondItem="WLW-dV-bBk" secondAttribute="bottom" constant="10" id="yxA-3e-xtv"/>
@@ -764,7 +783,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dF-BK-QI4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3535.1999999999998" y="462.8185907046477"/>
+            <point key="canvasLocation" x="3534.375" y="462.67605633802816"/>
         </scene>
         <!--Alternate Courses View Controller-->
         <scene sceneID="rVY-Nv-VeD">
@@ -779,19 +798,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="phz-mx-tRa">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write the name of each alternating course, then toggle which days you have that alternating course." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="rf4-KI-a4g">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yyL-Ns-LUC">
-                                        <rect key="frame" x="0.0" y="46" width="375" height="46.5"/>
+                                        <rect key="frame" x="0.0" y="40" width="375" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alternating Course 1:" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fD7-b2-K3B">
-                                                <rect key="frame" x="0.0" y="0.0" width="135" height="46.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="135" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="135" id="ZxW-xk-Hrf"/>
                                                 </constraints>
@@ -800,7 +819,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0yu-nd-xRk">
-                                                <rect key="frame" x="135" y="0.0" width="240" height="46.5"/>
+                                                <rect key="frame" x="135" y="0.0" width="240" height="40"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -808,7 +827,7 @@
                                         </subviews>
                                     </stackView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9eL-yG-Rem">
-                                        <rect key="frame" x="0.0" y="92.5" width="375" height="47"/>
+                                        <rect key="frame" x="0.0" y="80" width="375" height="41"/>
                                         <segments>
                                             <segment title="Day A"/>
                                             <segment title="Day 1"/>
@@ -816,7 +835,7 @@
                                         <color key="tintColor" red="1" green="0.18823529411764706" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="79w-HQ-cAe">
-                                        <rect key="frame" x="0.0" y="138.5" width="375" height="47.5"/>
+                                        <rect key="frame" x="0.0" y="120" width="375" height="40.5"/>
                                         <segments>
                                             <segment title="Day B"/>
                                             <segment title="Day 2"/>
@@ -824,7 +843,7 @@
                                         <color key="tintColor" red="1" green="0.18823529411764706" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1PQ-WJ-5jO">
-                                        <rect key="frame" x="0.0" y="185" width="375" height="47"/>
+                                        <rect key="frame" x="0.0" y="159.5" width="375" height="41"/>
                                         <segments>
                                             <segment title="Day C"/>
                                             <segment title="Day 3"/>
@@ -832,7 +851,7 @@
                                         <color key="tintColor" red="1" green="0.18823529411764706" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tMy-l1-hyK">
-                                        <rect key="frame" x="0.0" y="231" width="375" height="47.5"/>
+                                        <rect key="frame" x="0.0" y="199.5" width="375" height="41"/>
                                         <segments>
                                             <segment title="Day D"/>
                                             <segment title="Day 4"/>
@@ -840,7 +859,7 @@
                                         <color key="tintColor" red="1" green="0.18823529411764706" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PqK-xu-ugM">
-                                        <rect key="frame" x="0.0" y="277.5" width="375" height="47"/>
+                                        <rect key="frame" x="0.0" y="239.5" width="375" height="41"/>
                                         <segments>
                                             <segment title="Day E"/>
                                             <segment title="Day 5"/>
@@ -848,16 +867,16 @@
                                         <color key="tintColor" red="1" green="0.18823529411764706" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJy-Bb-NI4">
-                                        <rect key="frame" x="0.0" y="323.5" width="375" height="46"/>
+                                        <rect key="frame" x="0.0" y="279.5" width="375" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alternating Course 2:" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uM-Rz-pKP">
-                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="46"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="40"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rWw-zA-Oo8">
-                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="46"/>
+                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="40"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -865,7 +884,7 @@
                                         </subviews>
                                     </stackView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dNl-wz-bIr">
-                                        <rect key="frame" x="0.0" y="369.5" width="375" height="47.5"/>
+                                        <rect key="frame" x="0.0" y="319.5" width="375" height="41"/>
                                         <segments>
                                             <segment title="Day A"/>
                                             <segment title="Day 1"/>
@@ -873,7 +892,7 @@
                                         <color key="tintColor" red="1" green="0.18823529411764706" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8zV-aX-28R">
-                                        <rect key="frame" x="0.0" y="416" width="375" height="47"/>
+                                        <rect key="frame" x="0.0" y="359.5" width="375" height="41"/>
                                         <segments>
                                             <segment title="Day B"/>
                                             <segment title="Day 2"/>
@@ -881,7 +900,7 @@
                                         <color key="tintColor" red="1" green="0.18823529411764706" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pFv-GP-Ghb">
-                                        <rect key="frame" x="0.0" y="462" width="375" height="47.5"/>
+                                        <rect key="frame" x="0.0" y="399.5" width="375" height="40.5"/>
                                         <segments>
                                             <segment title="Day C"/>
                                             <segment title="Day 3"/>
@@ -889,7 +908,7 @@
                                         <color key="tintColor" red="1" green="0.18823529411764706" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gTO-3Q-Uen">
-                                        <rect key="frame" x="0.0" y="508.5" width="375" height="47"/>
+                                        <rect key="frame" x="0.0" y="439" width="375" height="41"/>
                                         <segments>
                                             <segment title="Day D"/>
                                             <segment title="Day 4"/>
@@ -897,7 +916,7 @@
                                         <color key="tintColor" red="1" green="0.18823529411764706" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aUH-Lf-h9u">
-                                        <rect key="frame" x="0.0" y="554.5" width="375" height="47.5"/>
+                                        <rect key="frame" x="0.0" y="479" width="375" height="41"/>
                                         <segments>
                                             <segment title="Day E"/>
                                             <segment title="Day 5"/>
@@ -905,7 +924,7 @@
                                         <color key="tintColor" red="1" green="0.18823529411764706" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03l-1I-07a">
-                                        <rect key="frame" x="0.0" y="601" width="375" height="46"/>
+                                        <rect key="frame" x="0.0" y="519" width="375" height="40"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                         <state key="normal" title="Done">
                                             <color key="titleColor" red="1" green="0.18823529411764706" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
@@ -949,11 +968,11 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hwi-ik-IX5" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bpU-FF-Lx0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bpU-FF-Lx0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="1" green="0.18823529410000001" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="1" green="0.18823529411764706" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
                         </textAttributes>

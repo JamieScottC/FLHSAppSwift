@@ -55,7 +55,8 @@ class CustomizeScheduleViewController: UIViewController {
             //We now check which courses alternate
             if alternates(index: i) {
                 //If this course alternates, change colors to make it look "toggled"
-                altButtons[i]?.backgroundColor = UIColor.red
+                print("ss")
+                altButtons[i]?.backgroundColor = UIColor(hexString: "#2980b9")
                 altButtons[i]?.setTitleColor(UIColor.white, for: .normal)
                 //Hide the field
                 courseFields[i]?.isHidden = true
@@ -68,10 +69,10 @@ class CustomizeScheduleViewController: UIViewController {
         //Go through each day and see if course names differ
         let originalCourseName = days[0].courses[index]
         for i in 0 ..< days.count {
-            print(originalCourseName + " =? " + days[i].courses[index])
+            //print(originalCourseName + " =? " + days[i].courses[index])
             if originalCourseName != days[i].courses[index] {
                 //This course DOES alternate!
-                print("Course " + String(index + 1) + " alternates")
+                //print("Course " + String(index + 1) + " alternates")
                 return true
             }
         }
@@ -135,14 +136,14 @@ class CustomizeScheduleViewController: UIViewController {
         guard let button = sender as? UIButton else {
             return
         }
-        if (button.backgroundColor != UIColor.red) {
+        if (button.backgroundColor != UIColor(hexString: "#2980b9")) {
             //Not toggled yet, so let's open a window!
             //button.tag has number that corresponds with course number (i.e. 1 for "Course 1")
             performSegue(withIdentifier: "showAlternate", sender: (button.tag - 1))
         } else {
             //It's already been toggled! So, let's untoggle it
             button.backgroundColor = nil
-            button.setTitleColor(UIColor.blue, for: .normal)
+            button.setTitleColor(UIColor(hexString: "#FF3029"), for: .normal)
             //Now we need to show the text field. We will have to figure out the index by checking what the button's index is
             for i in 0..<altButtons.count {
                 if altButtons[i] == button {
