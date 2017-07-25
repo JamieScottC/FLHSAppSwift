@@ -98,10 +98,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="201"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_launcher-web" translatesAutoresizingMaskIntoConstraints="NO" id="UvU-Tp-W7x">
-                                                <rect key="frame" x="0.0" y="0.0" width="160" height="201"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="159" height="201"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="215.5" placeholderIntrinsicHeight="100" text="FLHS Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="196" translatesAutoresizingMaskIntoConstraints="NO" id="14N-TE-qAp">
-                                                <rect key="frame" x="160" y="50.5" width="215" height="100"/>
+                                                <rect key="frame" x="159" y="50.5" width="216" height="100"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="33"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -293,7 +293,7 @@
         <scene sceneID="MRn-Sy-zki">
             <objects>
                 <tableViewController title="Schedule" id="zuK-I4-AfI" userLabel="Schedule" customClass="ScheduleTableViewController" customModule="FLHS_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="PMZ-21-yAm">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="PMZ-21-yAm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -331,6 +331,7 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="zuK-I4-AfI" id="QNd-1C-Xev"/>
                             <outlet property="delegate" destination="zuK-I4-AfI" id="c8Y-2H-O6r"/>

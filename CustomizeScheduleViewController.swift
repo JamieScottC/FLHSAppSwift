@@ -55,7 +55,6 @@ class CustomizeScheduleViewController: UIViewController {
             //We now check which courses alternate
             if alternates(index: i) {
                 //If this course alternates, change colors to make it look "toggled"
-                print("ss")
                 altButtons[i]?.backgroundColor = UIColor(hexString: "#2980b9")
                 altButtons[i]?.setTitleColor(UIColor.white, for: .normal)
                 //Hide the field

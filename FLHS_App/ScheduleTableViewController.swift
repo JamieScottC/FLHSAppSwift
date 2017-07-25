@@ -153,6 +153,10 @@ class ScheduleTableViewController: UITableViewController {
         
         
         // Configure the cell...
+        //Make sure the course name isnt empty
+        if(course.name == ""){
+            return cell
+        }
         //Find custom course name (Ex:"Course 1" -> "French")
         //Begin by getting course number - should be last character of name
         let index = course.name.index(course.name.endIndex, offsetBy: -1)
