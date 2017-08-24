@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		054F70A41EB03CDC00971779 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054F70A21EB03CDC00971779 /* Bolts.framework */; };
-		054F70A51EB03CDC00971779 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054F70A31EB03CDC00971779 /* Parse.framework */; };
 		054F70AA1EB03F4700971779 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054F70A61EB03F4700971779 /* AudioToolbox.framework */; };
 		054F70AB1EB03F4700971779 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 054F70A71EB03F4700971779 /* libsqlite3.tbd */; };
 		054F70AC1EB03F4700971779 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 054F70A81EB03F4700971779 /* libstdc++.6.tbd */; };
@@ -31,8 +29,17 @@
 		05EF13AD1E9ED7880076F9CD /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EF13AC1E9ED7880076F9CD /* ScheduleTableViewCell.swift */; };
 		05EF13AF1E9EDC4E0076F9CD /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EF13AE1E9EDC4E0076F9CD /* ScheduleTableViewController.swift */; };
 		05EF13B11E9EDF1D0076F9CD /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EF13B01E9EDF1D0076F9CD /* Course.swift */; };
+		530DCAD61F26D3E400050102 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 530DCAD51F26D3E400050102 /* GoogleService-Info.plist */; };
+		530DCAD71F26D3E400050102 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 530DCAD51F26D3E400050102 /* GoogleService-Info.plist */; };
+		530DCAD81F26D3E400050102 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 530DCAD51F26D3E400050102 /* GoogleService-Info.plist */; };
+		530DCADC1F2715C800050102 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530DCADB1F2715C800050102 /* UIColor+Hex.swift */; };
+		530DCADD1F2715C800050102 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530DCADB1F2715C800050102 /* UIColor+Hex.swift */; };
+		530DCADE1F2715C800050102 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530DCADB1F2715C800050102 /* UIColor+Hex.swift */; };
+		B481AC46552B63369775DBA2 /* Pods_FLHS_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C4FCD25056CF612E0FD9DB /* Pods_FLHS_AppUITests.framework */; };
 		D37024DC1EA167160057D5F7 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37024DB1EA167160057D5F7 /* AnnouncementViewController.swift */; };
 		D37024DE1EA169BF0057D5F7 /* LunchMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37024DD1EA169BF0057D5F7 /* LunchMenuViewController.swift */; };
+		F3BC63688D0C92AF3068DE11 /* Pods_FLHS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44BD79A25AB5B527356C63FC /* Pods_FLHS_App.framework */; };
+		FF59C158602B91112BFB18FF /* Pods_FLHS_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D2A17692257B3B478721577 /* Pods_FLHS_AppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +60,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		054F70A21EB03CDC00971779 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = FLHS_App/Bolts.framework; sourceTree = "<group>"; };
-		054F70A31EB03CDC00971779 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = FLHS_App/Parse.framework; sourceTree = "<group>"; };
 		054F70A61EB03F4700971779 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		054F70A71EB03F4700971779 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		054F70A81EB03F4700971779 /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
@@ -77,16 +82,25 @@
 		059AB44F1E22CEE3008CE585 /* FLHS_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FLHS_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		059AB4531E22CEE3008CE585 /* FLHS_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLHS_AppUITests.swift; sourceTree = "<group>"; };
 		059AB4551E22CEE3008CE585 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		05A3800C1EB03C4000D1D399 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../Downloads/Parse-iOS (1)/Bolts.framework"; sourceTree = "<group>"; };
-		05A3800D1EB03C4000D1D399 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../Downloads/Parse-iOS (1)/Parse.framework"; sourceTree = "<group>"; };
 		05EA12D01F17FB9B001BC217 /* CustomizeScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomizeScheduleViewController.swift; path = ../CustomizeScheduleViewController.swift; sourceTree = "<group>"; };
 		05EA12D21F180EEB001BC217 /* AlternateCoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlternateCoursesViewController.swift; sourceTree = "<group>"; };
 		05EF13AA1E9EC8AF0076F9CD /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		05EF13AC1E9ED7880076F9CD /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		05EF13AE1E9EDC4E0076F9CD /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		05EF13B01E9EDF1D0076F9CD /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		2B92AF405C57F71DE0E87542 /* Pods-FLHS_AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLHS_AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FLHS_AppUITests/Pods-FLHS_AppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		44BD79A25AB5B527356C63FC /* Pods_FLHS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FLHS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46C4FCD25056CF612E0FD9DB /* Pods_FLHS_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FLHS_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B62D7AF1B400F9BBDA9DDFF /* Pods-FLHS_AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLHS_AppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FLHS_AppUITests/Pods-FLHS_AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		530DCAD51F26D3E400050102 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		530DCADB1F2715C800050102 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		9D2A17692257B3B478721577 /* Pods_FLHS_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FLHS_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF2C663950B40C79B2F18D36 /* Pods-FLHS_AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLHS_AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FLHS_AppTests/Pods-FLHS_AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C394F20BE357E379407BA86E /* Pods-FLHS_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLHS_App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FLHS_App/Pods-FLHS_App.debug.xcconfig"; sourceTree = "<group>"; };
 		D37024DB1EA167160057D5F7 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
 		D37024DD1EA169BF0057D5F7 /* LunchMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LunchMenuViewController.swift; sourceTree = "<group>"; };
+		E39FCA9250500FA3D4CD4ADB /* Pods-FLHS_AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLHS_AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FLHS_AppTests/Pods-FLHS_AppTests.release.xcconfig"; sourceTree = "<group>"; };
+		FED64F7B72B2817C397BFBF7 /* Pods-FLHS_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLHS_App.release.xcconfig"; path = "Pods/Target Support Files/Pods-FLHS_App/Pods-FLHS_App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +112,7 @@
 				054F70AB1EB03F4700971779 /* libsqlite3.tbd in Frameworks */,
 				054F70AC1EB03F4700971779 /* libstdc++.6.tbd in Frameworks */,
 				054F70AD1EB03F4700971779 /* SystemConfiguration.framework in Frameworks */,
-				054F70A41EB03CDC00971779 /* Bolts.framework in Frameworks */,
-				054F70A51EB03CDC00971779 /* Parse.framework in Frameworks */,
+				F3BC63688D0C92AF3068DE11 /* Pods_FLHS_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF59C158602B91112BFB18FF /* Pods_FLHS_AppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B481AC46552B63369775DBA2 /* Pods_FLHS_AppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +143,7 @@
 				059AB4521E22CEE3008CE585 /* FLHS_AppUITests */,
 				059AB42E1E22CEE3008CE585 /* Products */,
 				05A3800B1EB03C4000D1D399 /* Frameworks */,
+				29828C5E24214BBAA91D733C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,25 +160,19 @@
 		059AB42F1E22CEE3008CE585 /* FLHS_App */ = {
 			isa = PBXGroup;
 			children = (
-				05EA12D01F17FB9B001BC217 /* CustomizeScheduleViewController.swift */,
-				D37024DB1EA167160057D5F7 /* AnnouncementViewController.swift */,
-				D37024DD1EA169BF0057D5F7 /* LunchMenuViewController.swift */,
-				059AB4301E22CEE3008CE585 /* AppDelegate.swift */,
-				059AB4321E22CEE3008CE585 /* ViewController.swift */,
-				059AB4341E22CEE3008CE585 /* Main.storyboard */,
-				057D50931F16AE8A00317DBE /* SwitchLunchTableViewController.swift */,
+				530DCAD91F2714E600050102 /* View Controllers */,
 				057D50951F16DAE700317DBE /* Day.swift */,
-				0578A2F81F15CCF2001608C0 /* DatePickerViewController.swift */,
+				059AB4301E22CEE3008CE585 /* AppDelegate.swift */,
+				05EF13AC1E9ED7880076F9CD /* ScheduleTableViewCell.swift */,
+				05EF13B01E9EDF1D0076F9CD /* Course.swift */,
+				056FC7251F15B15700777B8F /* UserScheduleData.swift */,
+				059AB4341E22CEE3008CE585 /* Main.storyboard */,
 				059AB43A1E22CEE3008CE585 /* Assets.xcassets */,
 				059AB43C1E22CEE3008CE585 /* LaunchScreen.storyboard */,
 				059AB43F1E22CEE3008CE585 /* Info.plist */,
 				059AB4371E22CEE3008CE585 /* FLHS_App.xcdatamodeld */,
-				05EF13AA1E9EC8AF0076F9CD /* CalendarViewController.swift */,
-				05EF13AC1E9ED7880076F9CD /* ScheduleTableViewCell.swift */,
-				05EF13AE1E9EDC4E0076F9CD /* ScheduleTableViewController.swift */,
-				05EF13B01E9EDF1D0076F9CD /* Course.swift */,
-				056FC7251F15B15700777B8F /* UserScheduleData.swift */,
-				05EA12D21F180EEB001BC217 /* AlternateCoursesViewController.swift */,
+				530DCAD51F26D3E400050102 /* GoogleService-Info.plist */,
+				530DCADB1F2715C800050102 /* UIColor+Hex.swift */,
 			);
 			path = FLHS_App;
 			sourceTree = "<group>";
@@ -192,12 +202,40 @@
 				054F70A71EB03F4700971779 /* libsqlite3.tbd */,
 				054F70A81EB03F4700971779 /* libstdc++.6.tbd */,
 				054F70A91EB03F4700971779 /* SystemConfiguration.framework */,
-				054F70A21EB03CDC00971779 /* Bolts.framework */,
-				054F70A31EB03CDC00971779 /* Parse.framework */,
-				05A3800C1EB03C4000D1D399 /* Bolts.framework */,
-				05A3800D1EB03C4000D1D399 /* Parse.framework */,
+				44BD79A25AB5B527356C63FC /* Pods_FLHS_App.framework */,
+				9D2A17692257B3B478721577 /* Pods_FLHS_AppTests.framework */,
+				46C4FCD25056CF612E0FD9DB /* Pods_FLHS_AppUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		29828C5E24214BBAA91D733C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C394F20BE357E379407BA86E /* Pods-FLHS_App.debug.xcconfig */,
+				FED64F7B72B2817C397BFBF7 /* Pods-FLHS_App.release.xcconfig */,
+				BF2C663950B40C79B2F18D36 /* Pods-FLHS_AppTests.debug.xcconfig */,
+				E39FCA9250500FA3D4CD4ADB /* Pods-FLHS_AppTests.release.xcconfig */,
+				4B62D7AF1B400F9BBDA9DDFF /* Pods-FLHS_AppUITests.debug.xcconfig */,
+				2B92AF405C57F71DE0E87542 /* Pods-FLHS_AppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		530DCAD91F2714E600050102 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				059AB4321E22CEE3008CE585 /* ViewController.swift */,
+				D37024DB1EA167160057D5F7 /* AnnouncementViewController.swift */,
+				05EF13AA1E9EC8AF0076F9CD /* CalendarViewController.swift */,
+				D37024DD1EA169BF0057D5F7 /* LunchMenuViewController.swift */,
+				05EF13AE1E9EDC4E0076F9CD /* ScheduleTableViewController.swift */,
+				05EA12D01F17FB9B001BC217 /* CustomizeScheduleViewController.swift */,
+				05EA12D21F180EEB001BC217 /* AlternateCoursesViewController.swift */,
+				0578A2F81F15CCF2001608C0 /* DatePickerViewController.swift */,
+				057D50931F16AE8A00317DBE /* SwitchLunchTableViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,9 +245,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 059AB4581E22CEE3008CE585 /* Build configuration list for PBXNativeTarget "FLHS_App" */;
 			buildPhases = (
+				8508D2C9154E9F975C27A7E8 /* [CP] Check Pods Manifest.lock */,
 				059AB4291E22CEE3008CE585 /* Sources */,
 				059AB42A1E22CEE3008CE585 /* Frameworks */,
 				059AB42B1E22CEE3008CE585 /* Resources */,
+				381D7BEFB5F5116DBA03EBB9 /* [CP] Embed Pods Frameworks */,
+				C09CE0A659BE7B5FDBCEDF90 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -224,9 +265,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 059AB45B1E22CEE3008CE585 /* Build configuration list for PBXNativeTarget "FLHS_AppTests" */;
 			buildPhases = (
+				4A7C94067A9171EFA534C7AD /* [CP] Check Pods Manifest.lock */,
 				059AB4401E22CEE3008CE585 /* Sources */,
 				059AB4411E22CEE3008CE585 /* Frameworks */,
 				059AB4421E22CEE3008CE585 /* Resources */,
+				0D4E888FF57D7F846A63765F /* [CP] Embed Pods Frameworks */,
+				F4D74621BE14C5B70592A9E6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -242,9 +286,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 059AB45E1E22CEE3008CE585 /* Build configuration list for PBXNativeTarget "FLHS_AppUITests" */;
 			buildPhases = (
+				38DA4FF1DD41F3049C6A1F76 /* [CP] Check Pods Manifest.lock */,
 				059AB44B1E22CEE3008CE585 /* Sources */,
 				059AB44C1E22CEE3008CE585 /* Frameworks */,
 				059AB44D1E22CEE3008CE585 /* Resources */,
+				1FD43424B9FEAC0001345BBD /* [CP] Embed Pods Frameworks */,
+				9B5E3D231664C5CB936210C3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -309,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				059AB43E1E22CEE3008CE585 /* LaunchScreen.storyboard in Resources */,
+				530DCAD61F26D3E400050102 /* GoogleService-Info.plist in Resources */,
 				059AB43B1E22CEE3008CE585 /* Assets.xcassets in Resources */,
 				059AB4361E22CEE3008CE585 /* Main.storyboard in Resources */,
 			);
@@ -318,6 +366,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				530DCAD71F26D3E400050102 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,10 +374,149 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				530DCAD81F26D3E400050102 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D4E888FF57D7F846A63765F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FLHS_AppTests/Pods-FLHS_AppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1FD43424B9FEAC0001345BBD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FLHS_AppUITests/Pods-FLHS_AppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		381D7BEFB5F5116DBA03EBB9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FLHS_App/Pods-FLHS_App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38DA4FF1DD41F3049C6A1F76 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4A7C94067A9171EFA534C7AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8508D2C9154E9F975C27A7E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9B5E3D231664C5CB936210C3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FLHS_AppUITests/Pods-FLHS_AppUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C09CE0A659BE7B5FDBCEDF90 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FLHS_App/Pods-FLHS_App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4D74621BE14C5B70592A9E6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FLHS_AppTests/Pods-FLHS_AppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		059AB4291E22CEE3008CE585 /* Sources */ = {
@@ -344,6 +532,7 @@
 				05EA12D11F17FB9B001BC217 /* CustomizeScheduleViewController.swift in Sources */,
 				D37024DC1EA167160057D5F7 /* AnnouncementViewController.swift in Sources */,
 				057D50961F16DAE700317DBE /* Day.swift in Sources */,
+				530DCADC1F2715C800050102 /* UIColor+Hex.swift in Sources */,
 				05EF13AB1E9EC8AF0076F9CD /* CalendarViewController.swift in Sources */,
 				05EF13AD1E9ED7880076F9CD /* ScheduleTableViewCell.swift in Sources */,
 				057D50941F16AE8A00317DBE /* SwitchLunchTableViewController.swift in Sources */,
@@ -358,6 +547,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				059AB4491E22CEE3008CE585 /* FLHS_AppTests.swift in Sources */,
+				530DCADD1F2715C800050102 /* UIColor+Hex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +556,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				059AB4541E22CEE3008CE585 /* FLHS_AppUITests.swift in Sources */,
+				530DCADE1F2715C800050102 /* UIColor+Hex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +688,7 @@
 		};
 		059AB4591E22CEE3008CE585 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C394F20BE357E379407BA86E /* Pods-FLHS_App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -517,6 +709,7 @@
 		};
 		059AB45A1E22CEE3008CE585 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FED64F7B72B2817C397BFBF7 /* Pods-FLHS_App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -536,6 +729,7 @@
 		};
 		059AB45C1E22CEE3008CE585 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF2C663950B40C79B2F18D36 /* Pods-FLHS_AppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -550,6 +744,7 @@
 		};
 		059AB45D1E22CEE3008CE585 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E39FCA9250500FA3D4CD4ADB /* Pods-FLHS_AppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -564,6 +759,7 @@
 		};
 		059AB45F1E22CEE3008CE585 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B62D7AF1B400F9BBDA9DDFF /* Pods-FLHS_AppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = FLHS_AppUITests/Info.plist;
@@ -577,6 +773,7 @@
 		};
 		059AB4601E22CEE3008CE585 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B92AF405C57F71DE0E87542 /* Pods-FLHS_AppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = FLHS_AppUITests/Info.plist;

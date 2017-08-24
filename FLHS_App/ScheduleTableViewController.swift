@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Parse
+import Firebase
 import Foundation
 
 class ScheduleTableViewController: UITableViewController {
@@ -15,7 +15,8 @@ class ScheduleTableViewController: UITableViewController {
     @IBOutlet var DateButton: UIButton!
 
     @IBOutlet var SwitchLunchButton: UIBarButtonItem!
-    
+    var ref: DatabaseReference!
+
     let twoHourDelay5EarlyLunchTimes : [String] = ["9:45 - 10:10", "10:15 - 10:40", "10:45 - 11:10", "11:15 - 11:45", "11:50 - 12:15", "12:20 - 12:45", "12:50 - 1:15", "1:20 - 1:45", "1:50 - 2:15"]
     let twoHourDelay5MiddleLunchTimes : [String] = ["9:45 - 10:10", "10:15 - 10:40", "10:45 - 11:10", "11:15 - 11:40", "11:45 - 12:15", "12:20 - 12:45", "12:50 - 1:15", "1:20 - 1:45", "1:50 - 2:15"]
     let twoHourDelay5LateLunchTimes: [String] = ["9:45 - 10:10", "10:15 - 10:40", "10:45 - 11:10", "11:15 - 11:40", "11:45 - 12:10", "12:15 - 12:45", "12:50 - 1:15", "1:20 - 1:45", "1:50 - 2:15"]
@@ -59,17 +60,20 @@ class ScheduleTableViewController: UITableViewController {
     let day5Lunch2Times : [String] = ["7:45 - 8:25", "8:30 - 9:10", "9:15 - 9:55", "10:00 - 10:40", "10:45 - 11:15", "11:20 - 12:00", "12:05 - 12:45", "12:50 - 1:30", "1:35 - 2:15"]
     let day5Lunch3Times : [String] = ["7:45 - 8:25", "8:30 - 9:10", "9:15 - 9:55", "10:00 - 10:40", "10:45 - 11:25", "11:30 - 12:00", "12:05 - 12:45", "12:50 - 1:30", "1:35 - 2:15"]
     
-    
+    var value: NSDictionary!
     var dayType = "" //determines day type that we are trying to display today. (Ex: "", "CLB", "ADV", "1HD", "2HD", "~<NameofSpecial>")
     var dayLetter = "A"
     var courses = [Course]() //this is the master list that is displayed in the table view
     var customDays : [Day]? //days with course names replaced with personal course names ("French" instead of "Course 1")
     var queryDate : String!
     var lunchType : String!
-    var config : PFConfig? = nil//instance variable particularly for special schedules.
     var trackOptions : [String] = []
+    var specialDayCourseNames : [String] = []
+    var specialDayTimes : [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
+
         //Most my set up code is on ViewWillAppear instead so that when the back button is pressed, the screen updates.
         
         // Uncomment the following line to preserve selection between presentations
@@ -81,6 +85,7 @@ class ScheduleTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
         //In case we revisit the page (after changing lunch, for example), let's clear the courses, trackOptions, all that stuff
         courses = []
         trackOptions = []
@@ -134,6 +139,7 @@ class ScheduleTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        //Return number of courses; changes depending on number of courses that day.
+        print("number of courses is \(courses.count)")
         return courses.count
     }
 
@@ -147,6 +153,10 @@ class ScheduleTableViewController: UITableViewController {
         
         
         // Configure the cell...
+        //Make sure the course name isnt empty
+        if(course.name == ""){
+            return cell
+        }
         //Find custom course name (Ex:"Course 1" -> "French")
         //Begin by getting course number - should be last character of name
         let index = course.name.index(course.name.endIndex, offsetBy: -1)
@@ -557,7 +567,8 @@ class ScheduleTableViewController: UITableViewController {
                 if (dayType.substring(to: firstCharIndex) == "~") {
                     //Yay! It is in fact a special schedule.
                     //Let's get this schedule data
-                    let scheduleData = config?[dayType + dayLetter] as! Array<String>
+                    
+                    let scheduleData = self.value[self.dayType + self.dayLetter] as! Array<String>
                     //Create arrays to store track names and indicies
                     //(A track is a schedule route a student can take. See the README for more details.)
                     var trackNames : [String] = []
@@ -566,6 +577,7 @@ class ScheduleTableViewController: UITableViewController {
                         let string : String = scheduleData[i]
                         //Check if first character of this string starts with a slash - the notation for a track
                         let firstCharStringIndex = string.index(string.startIndex, offsetBy: 1)
+                        
                         if (string.substring(to: firstCharStringIndex) == "/") {
                             //This is the name of a track. Let's add the index and name to the arrays.
                             trackIndicies.append(i)
@@ -583,7 +595,7 @@ class ScheduleTableViewController: UITableViewController {
                     //Change selection into a number for indexing
                     let trackSelection : Int = Int(self.lunchType)!
                     //Update Switch Lunch Button with current track selection
-                    SwitchLunchButton.title = trackNames[trackSelection]
+                    self.SwitchLunchButton.title = trackNames[trackSelection]
                     /*Indices (in scheduleArray)
                      * First Course: trackIndicies[trackIndex] + 1
                      * Last Course Time: trackIndicies[trackIndex + 1] - 1
@@ -612,19 +624,28 @@ class ScheduleTableViewController: UITableViewController {
                             }
                         }
                     }
+                    self.specialDayCourseNames = courseNames
+                    self.specialDayTimes = times
+                   
+                
+                    
                     //Yay! Now let's just add these courseNames and times into the courses array
-                    for i in 0..<times.count {
-                        courses.append(Course(name: courseNames[i], time: times[i]))
+                    for i in 0..<specialDayTimes.count {
+                        courses.append(Course(name: specialDayCourseNames[i], time: specialDayTimes[i]))
                     }
-                }
+                    
+            }
         }
     }
     
     private func getDay(queryDate: String) {
         //Get Parse Config Data
-        PFConfig.getInBackground { (config, error) in
-            let dates = config?["WhatDay"] as! Array<String>
-            self.config = config!
+
+        // Get user value
+            ref.child("params").observe(.value, with: {(snapshot ) in
+            let value = snapshot.value as! NSDictionary
+            let dates = value["WhatDay"] as! Array<String>
+            self.value = value
             //Go through each day item.
             for index in 0 ... (dates.count) - 1 {
                 let strIndex = dates[index].index((dates[index].startIndex), offsetBy: 5)
@@ -644,14 +665,13 @@ class ScheduleTableViewController: UITableViewController {
                     //Update Switch Lunch Text
                     self.SwitchLunchButton.title = self.getLunch()
                     //Load the courses.
-                     self.loadCourses(lunchType: lunch)
+                    self.loadCourses(lunchType: lunch)
                     //Let's display this schedule!
-                     self.tableView.reloadData()
+                    self.tableView.reloadData()
                 }
             }
-        }
         
-        
+        })
     }
     
     private func getLunch() -> String {
