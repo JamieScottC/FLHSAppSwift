@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         title = "FLHS Info"
         //UINavigationBar.barTintColor = UIColor.red
         
+        
     }
 
     override func didReceiveMemoryWarning() {

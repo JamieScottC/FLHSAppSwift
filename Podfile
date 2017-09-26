@@ -8,7 +8,9 @@ target 'FLHS_App' do
   # Pods for FLHS_App
   pod 'Firebase/Core'
   pod 'Firebase/Database'
-
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
+  
   target 'FLHS_AppTests' do
     inherit! :search_paths
     # Pods for testing
