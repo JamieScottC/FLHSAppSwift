@@ -19,7 +19,7 @@ class CalendarViewController: UIViewController {
         self.automaticallyAdjustsScrollViewInsets = false
         // Do any additional setup after loading the view.
         //ALT Print URL"http://www.bcsdny.org/calendar_events.cfm?&cat=0&location=1&themonth=4&theyear=2017&buildit=0.316616187762&AddSportingEvents=0&printPage=1"
-        let requestURL = NSURL(string: "http://www.bcsdny.org/m/events.cfm")
+        let requestURL = NSURL(string: "https://www.bcsdny.org/Page/913")
         let request = NSURLRequest(url: requestURL as! URL)
         CalendarWebView.loadRequest(request as URLRequest)
     }

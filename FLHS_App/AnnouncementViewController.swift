@@ -22,7 +22,7 @@ class AnnouncementViewController: UIViewController{
         self.automaticallyAdjustsScrollViewInsets = false
         
         //Initialize UIWebview with announcement URL
-        let url = "http://www.bcsdny.org/m/content.cfm?subpage=1841"//Announcement URL
+        let url = "https://www.bcsdny.org/domain/154"//Announcement URL
         let requestURL = NSURL(string:url)
         let request = NSURLRequest(url: requestURL! as URL)
         announcementWebView.loadRequest(request as URLRequest)
