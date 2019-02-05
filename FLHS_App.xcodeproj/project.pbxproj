@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		054F70AA1EB03F4700971779 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054F70A61EB03F4700971779 /* AudioToolbox.framework */; };
 		054F70AB1EB03F4700971779 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 054F70A71EB03F4700971779 /* libsqlite3.tbd */; };
-		054F70AC1EB03F4700971779 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 054F70A81EB03F4700971779 /* libstdc++.6.tbd */; };
 		054F70AD1EB03F4700971779 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054F70A91EB03F4700971779 /* SystemConfiguration.framework */; };
 		056FC7261F15B15700777B8F /* UserScheduleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056FC7251F15B15700777B8F /* UserScheduleData.swift */; };
 		0578A2F91F15CCF2001608C0 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0578A2F81F15CCF2001608C0 /* DatePickerViewController.swift */; };
@@ -35,6 +34,7 @@
 		530DCADC1F2715C800050102 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530DCADB1F2715C800050102 /* UIColor+Hex.swift */; };
 		530DCADD1F2715C800050102 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530DCADB1F2715C800050102 /* UIColor+Hex.swift */; };
 		530DCADE1F2715C800050102 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530DCADB1F2715C800050102 /* UIColor+Hex.swift */; };
+		532BDA8C2209F77900C7FA9A /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532BDA8B2209F77900C7FA9A /* UITextField+Extensions.swift */; };
 		B481AC46552B63369775DBA2 /* Pods_FLHS_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C4FCD25056CF612E0FD9DB /* Pods_FLHS_AppUITests.framework */; };
 		D37024DC1EA167160057D5F7 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37024DB1EA167160057D5F7 /* AnnouncementViewController.swift */; };
 		D37024DE1EA169BF0057D5F7 /* LunchMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37024DD1EA169BF0057D5F7 /* LunchMenuViewController.swift */; };
@@ -94,6 +94,7 @@
 		4B62D7AF1B400F9BBDA9DDFF /* Pods-FLHS_AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLHS_AppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FLHS_AppUITests/Pods-FLHS_AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		530DCAD51F26D3E400050102 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		530DCADB1F2715C800050102 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		532BDA8B2209F77900C7FA9A /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		9D2A17692257B3B478721577 /* Pods_FLHS_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FLHS_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2C663950B40C79B2F18D36 /* Pods-FLHS_AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLHS_AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FLHS_AppTests/Pods-FLHS_AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C394F20BE357E379407BA86E /* Pods-FLHS_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLHS_App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FLHS_App/Pods-FLHS_App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -110,7 +111,6 @@
 			files = (
 				054F70AA1EB03F4700971779 /* AudioToolbox.framework in Frameworks */,
 				054F70AB1EB03F4700971779 /* libsqlite3.tbd in Frameworks */,
-				054F70AC1EB03F4700971779 /* libstdc++.6.tbd in Frameworks */,
 				054F70AD1EB03F4700971779 /* SystemConfiguration.framework in Frameworks */,
 				F3BC63688D0C92AF3068DE11 /* Pods_FLHS_App.framework in Frameworks */,
 			);
@@ -162,6 +162,7 @@
 			children = (
 				530DCAD91F2714E600050102 /* View Controllers */,
 				057D50951F16DAE700317DBE /* Day.swift */,
+				532BDA8B2209F77900C7FA9A /* UITextField+Extensions.swift */,
 				059AB4301E22CEE3008CE585 /* AppDelegate.swift */,
 				05EF13AC1E9ED7880076F9CD /* ScheduleTableViewCell.swift */,
 				05EF13B01E9EDF1D0076F9CD /* Course.swift */,
@@ -534,6 +535,7 @@
 				057D50961F16DAE700317DBE /* Day.swift in Sources */,
 				530DCADC1F2715C800050102 /* UIColor+Hex.swift in Sources */,
 				05EF13AB1E9EC8AF0076F9CD /* CalendarViewController.swift in Sources */,
+				532BDA8C2209F77900C7FA9A /* UITextField+Extensions.swift in Sources */,
 				05EF13AD1E9ED7880076F9CD /* ScheduleTableViewCell.swift in Sources */,
 				057D50941F16AE8A00317DBE /* SwitchLunchTableViewController.swift in Sources */,
 				059AB4331E22CEE3008CE585 /* ViewController.swift in Sources */,

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class CustomizeScheduleViewController: UIViewController {
     @IBOutlet var course1Field: UITextField!
     @IBOutlet var course2Field: UITextField!
